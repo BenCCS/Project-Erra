@@ -1,0 +1,663 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 42938266, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
+  m_Name: PlayMakerGlobals-DESKTOP-0DUI9UK
+  m_EditorClassIdentifier: 
+  variables:
+    floatVariables:
+    - useVariable: 1
+      name: 
+      tooltip: 'Managed by script '
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: 
+      tooltip: 'Managed by script '
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: Music VOlume
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0.5
+    - useVariable: 1
+      name: SFX Volume
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0.5
+    - useVariable: 1
+      name: Voice Volume
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0.5
+    intVariables:
+    - useVariable: 1
+      name: 
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: 
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: 
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: 
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: CurrentError
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: CurrentSubLevel
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: CurrentSystemSecurity
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 1
+    - useVariable: 1
+      name: CurrentSecurityWords
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: 
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: 
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: 
+      tooltip: 
+      showInInspector: 0
+      networkSync: 1
+      value: 0
+    - useVariable: 1
+      name: 
+      tooltip: 
+      showInInspector: 0
+      networkSync: 1
+      value: 0
+    - useVariable: 1
+      name: 
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: 
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: Current_wordscompleted
+      tooltip: 'Managed by script '
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: Current_wordsobjective
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: CurrentLevel
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 1
+    - useVariable: 1
+      name: DLC owned
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: Player_TotalErrors
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: Player_TotalWordFound
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: CurrentDifficulty
+      tooltip: 'INIT: MEDIUM 3'
+      showInInspector: 0
+      networkSync: 0
+      value: 4
+    - useVariable: 1
+      name: Current_letterslastword
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: Current_letterscompleted
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: Current_lettersobjective
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: Player_BestScore
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: 
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: 
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: Player_Combo
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: CurrentGalleryNum
+      tooltip: 'init: 0'
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: CurrentGalleryPage
+      tooltip: init:1
+      showInInspector: 0
+      networkSync: 0
+      value: 1
+    - useVariable: 1
+      name: CurrentSelectedLvl
+      tooltip: 'init: 1'
+      showInInspector: 0
+      networkSync: 0
+      value: 1
+    - useVariable: 1
+      name: CurrentSelectPage10
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: CurrentSelection
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 1
+    - useVariable: 1
+      name: CurrentSelectionPage
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 1
+    - useVariable: 1
+      name: CurrentFinalLvl
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 1
+    - useVariable: 1
+      name: Player_TotalLetter
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: Player_TotalTime
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: Player_CompletedGames
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: Current_AchToValidate
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: Player_Language
+      tooltip: 'Init: 1'
+      showInInspector: 0
+      networkSync: 0
+      value: 2
+    boolVariables:
+    - useVariable: 1
+      name: Hacking in progress
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: GlobalPause
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: INIT DONE
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: SAVE LOADED
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: DLC1 owned
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: DLC2 owned
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: DLC3 owned
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: DLC4 owned
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: 
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: Player_Mute
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    stringVariables:
+    - useVariable: 1
+      name: Debug string
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 
+    - useVariable: 1
+      name: 
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 
+    - useVariable: 1
+      name: 
+      tooltip: 
+      showInInspector: 0
+      networkSync: 1
+      value: 
+    - useVariable: 1
+      name: 
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 
+    - useVariable: 1
+      name: 
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 
+    - useVariable: 1
+      name: 
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 
+    - useVariable: 1
+      name: CurrentTheme
+      tooltip: Witch - Primal - Maid
+      showInInspector: 0
+      networkSync: 0
+      value: Witch
+    - useVariable: 1
+      name: Version
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 1.01
+    - useVariable: 1
+      name: Platform
+      tooltip: Steam / Nutaku / none
+      showInInspector: 0
+      networkSync: 0
+      value: Steam
+    - useVariable: 1
+      name: 
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 
+    - useVariable: 1
+      name: CurrentGalleryFilter
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: Witch
+    - useVariable: 1
+      name: CurrentSelectionFilter
+      tooltip: 'init: witch'
+      showInInspector: 0
+      networkSync: 0
+      value: Witch
+    - useVariable: 1
+      name: CurrentPopupDLC
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 
+    - useVariable: 1
+      name: 
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 
+    - useVariable: 1
+      name: 
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 
+    vector2Variables: []
+    vector3Variables: []
+    colorVariables: []
+    rectVariables: []
+    quaternionVariables: []
+    gameObjectVariables:
+    - useVariable: 1
+      name: 
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: {fileID: 0}
+    - useVariable: 1
+      name: Current Hacked System
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: {fileID: 0}
+    - useVariable: 1
+      name: CurrentPicGallery
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: {fileID: 0}
+    - useVariable: 1
+      name: Steam_Manager
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: {fileID: 0}
+    objectVariables:
+    - useVariable: 1
+      name: CurrentPic
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      typeName: UnityEngine.Sprite
+      value: {fileID: 0}
+    materialVariables: []
+    textureVariables: []
+    arrayVariables:
+    - useVariable: 1
+      name: 
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      type: 1
+      objectTypeName: UnityEngine.Object
+      floatValues: []
+      intValues: 
+      boolValues: 
+      stringValues: []
+      vector4Values: []
+      objectReferences: []
+    - useVariable: 1
+      name: 
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      type: 0
+      objectTypeName: UnityEngine.Object
+      floatValues: []
+      intValues: 
+      boolValues: 
+      stringValues: []
+      vector4Values: []
+      objectReferences: []
+    - useVariable: 1
+      name: Player_UnlockedPic_Witch
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      type: 2
+      objectTypeName: UnityEngine.Object
+      floatValues: []
+      intValues: 
+      boolValues: 01000000000000000000000000000000000000000000000000000000000000000000000000000000
+      stringValues: []
+      vector4Values: []
+      objectReferences: []
+    - useVariable: 1
+      name: Player_UnlockedPic_Primal
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      type: 2
+      objectTypeName: UnityEngine.Object
+      floatValues: []
+      intValues: 
+      boolValues: 01000000000000000000000000000000000000000000000000000000000000000000000000000000
+      stringValues: []
+      vector4Values: []
+      objectReferences: []
+    - useVariable: 1
+      name: Player_UnlockedPic_Maid
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      type: 2
+      objectTypeName: UnityEngine.Object
+      floatValues: []
+      intValues: 
+      boolValues: 01000000000000000000000000000000000000000000000000000000000000000000000000000000
+      stringValues: []
+      vector4Values: []
+      objectReferences: []
+    - useVariable: 1
+      name: 
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      type: 12
+      objectTypeName: UnityEngine.Object
+      floatValues: []
+      intValues: 
+      boolValues: 
+      stringValues: []
+      vector4Values: []
+      objectReferences: []
+    - useVariable: 1
+      name: AchievementsCompleted
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      type: 2
+      objectTypeName: UnityEngine.Object
+      floatValues: []
+      intValues: 
+      boolValues: 0000000000000000000000
+      stringValues: []
+      vector4Values: []
+      objectReferences: []
+    enumVariables: []
+    categories:
+    - 
+    - AA DLC
+    - AAA INIT
+    - ACH
+    - CURRENT
+    - CURRENT LEVEL
+    - PLAYER
+    variableCategoryIDs: 00000000000000000600000006000000060000000100000003000000030000000100000005000000050000000500000005000000020000000200000000000000000000000000000001000000050000000500000005000000010000000600000006000000050000000400000004000000040000000600000000000000000000000600000004000000040000000400000004000000040000000400000004000000060000000600000006000000030000000600000005000000050000000500000002000000010000000100000001000000010000000000000000000000040000000000000000000000010000000200000000000000040000000200000002000000000000000400000004000000040000000000000000000000010000000500000004000000000000000400000000000000000000000600000006000000060000000000000003000000
+  events:
+  - Pick Password
+  - PHOTON / CLIENT STATE / AUTHENTICATED
+  - PHOTON / CLIENT STATE / AUTHENTICATING
+  - PHOTON / CLIENT STATE / CONNECTED TO GAMESERVER
+  - PHOTON / CLIENT STATE / CONNECTED TO MASTERSERVER
+  - PHOTON / CLIENT STATE / CONNECTED TO NAMESERVER
+  - PHOTON / CLIENT STATE / CONNECTING TO GAMESERVER
+  - PHOTON / CLIENT STATE / CONNECTING TO NAMESERVER
+  - PHOTON / CLIENT STATE / CONNECTING TO MASTERSERVER
+  - PHOTON / CLIENT STATE / DISCONNECTED
+  - PHOTON / CLIENT STATE / DISCONNECTING
+  - PHOTON / CLIENT STATE / DISCONNECTING FROM GAMESERVER
+  - PHOTON / CLIENT STATE / DISCONNECTING FROM MASTERSERVER
+  - PHOTON / CLIENT STATE / DISCONNECTING FROM NAMESERVER
+  - PHOTON / CLIENT STATE / JOINED
+  - PHOTON / CLIENT STATE / JOINED LOBBY
+  - PHOTON / CLIENT STATE / JOINING
+  - PHOTON / CLIENT STATE / JOINING LOBBY
+  - PHOTON / CLIENT STATE / LEAVING
+  - PHOTON / CLIENT STATE / PEER CREATED
+  - PHOTON / ON CONNECTED
+  - PHOTON / ON CONNECTED TO MASTER
+  - PHOTON / ON DISCONNECTED
+  - PHOTON / ON CUSTOM AUTHENTICATION RESPONSE
+  - PHOTON / ON CUSTOM AUTHENTICATION FAILED
+  - PHOTON / ON JOINED LOBBY
+  - PHOTON / ON LEFT LOBBY
+  - PHOTON / ON CREATED ROOM
+  - 'PHOTON / ON CREATE ROOM FAILED '
+  - PHOTON / ON JOINED ROOM
+  - PHOTON / ON JOINED ROOM FAILED
+  - PHOTON / ON JOIN RANDOM ROOM FAILED
+  - PHOTON / ON LEFT ROOM
+  - PHOTON / ON PLAYER ENTERED ROOM
+  - PHOTON / ON PLAYER LEFT ROOM
+  - PHOTON / ON FRIEND LIST UPDATE
+  - PHOTON / ON ROOM LIST UPDATE
+  - PHOTON / ON ROOM PROPERTIES UPDATE
+  - PHOTON / ON PLAYER PROPERTIES UPDATE
+  - PHOTON / ON LOBBY STATISTICS UPDATE
+  - PHOTON / ON MASTERCLIENT SWITCHED
+  - PHOTON / ON REGION LIST RECEIVED
+  - PHOTON / ON WEBRPC RESPONSE
+  - PHOTON / ON PHOTON INSTANTIATE
+  - DEMO / UI / ON VALUE CHANGED
+  - DEMO / RPC / TO NEXT
+  - DEMO / RPC /FOR ALL TARGETS
+  - DEMO / UI / PING REFRESH
+  - DEMO / CONNECT
+  - DEMO / CONNECT TO BEST SERVER
+  - DEMO / CREATE ROOM
+  - DEMO / DISCONNECT
+  - DEMO / JOIN LOBBY
+  - DEMO / LEAVE LOBBY
+  - DEMO / LEAVE ROOM
+  - DEMO / JOIN RANDOM ROOM
+  - DEMO / SHOW ERROR
+  - Random Queue btn
+  - Start Game btn
+  - Click
+  - AchCompleted
+  - click
+  - close
+  - is open
+  - open-close-settings
+  - Back to menu
+  - Edit Name&Color
+  - Refresh
+  - Refresh Background
+  - Refresh option
+  - Reset
+  - Color1 refresh
+  - Color2 refresh
+  - FadeOut
+  - FadeOut3s
+  - next music
+  - mute
+  - Update Slider
+  - New Error
+  - LevelSelected
+  - Pic Selected
