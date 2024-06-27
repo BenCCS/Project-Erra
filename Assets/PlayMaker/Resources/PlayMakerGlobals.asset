@@ -998,44 +998,11 @@ MonoBehaviour:
       type: 1
       objectTypeName: UnityEngine.Object
       floatValues: []
-      intValues: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+      intValues: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
       boolValues: 
       stringValues: []
       vector4Values: []
       objectReferences: []
-    - useVariable: 1
-      name: Buildings1
-      tooltip: 
-      showInInspector: 0
-      networkSync: 0
-      type: 3
-      objectTypeName: UnityEngine.GameObject
-      floatValues: []
-      intValues: 
-      boolValues: 
-      stringValues: []
-      vector4Values: []
-      objectReferences:
-      - {fileID: -927199367670048503, guid: 2b615fa817b0bbd4491288772060e999, type: 3}
-      - {fileID: 4052118044696883821, guid: ed5cbbe1850be024ba302bf19d9ef565, type: 3}
-      - {fileID: 4467043909420714823, guid: 5f6293e65fa4a7e4db660fac3d82232e, type: 3}
-      - {fileID: 1579197969785654069, guid: b149e51b4fb735b45ade389e258558eb, type: 3}
-      - {fileID: 7207444423716601647, guid: a182e9cc781248c49ae4a592ed38b8ce, type: 3}
-      - {fileID: 8381282367526377007, guid: 72251895b0829e04b9df72f404f765a3, type: 3}
-      - {fileID: 5819315381170307424, guid: bf70b96d6b7c29d44b35d4169f6511e7, type: 3}
-      - {fileID: 1324466865179868808, guid: 3e0e38156101b02479d99d29fdc68f0d, type: 3}
-      - {fileID: 7232461353935636031, guid: dd5200b107a680a43a7849cf09feb58c, type: 3}
-      - {fileID: 6402151123857430444, guid: 4e8a277f725b65b42b13e4542e5fdb76, type: 3}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
     - useVariable: 1
       name: Buildings_name
       tooltip: 
@@ -1047,7 +1014,7 @@ MonoBehaviour:
       intValues: 
       boolValues: 
       stringValues:
-      - 
+      - Command Center
       - Population Quarter 1
       - Population Quarter 2
       - Population Quarter 3
@@ -1057,9 +1024,9 @@ MonoBehaviour:
       - Ore Extractor lvl 1
       - Ore Extractor lvl 2
       - Ore Extractor lvl 3
-      - 
-      - 
-      - 
+      - Research Laboratory
+      - Factory
+      - Landing Pad
       - 
       - 
       - 
@@ -1080,7 +1047,7 @@ MonoBehaviour:
       intValues: 
       boolValues: 
       stringValues:
-      - 
+      - Command Center.
       - 'Add 1 population to the sector.    '
       - 'Add 2 populations to the sector.    '
       - 'Add 3 populations to the sector.    '
@@ -1090,9 +1057,9 @@ MonoBehaviour:
       - Extract 1 ore/sec from the ground.
       - Extract 2 ores/sec from the ground.
       - Extract 3 ores/sec from the ground.
-      - 
-      - 
-      - 
+      - Research Laboratory.
+      - Factory.
+      - Landing Pad.
       - 
       - 
       - 
@@ -1102,6 +1069,39 @@ MonoBehaviour:
       - 
       vector4Values: []
       objectReferences: []
+    - useVariable: 1
+      name: Buildings_obj
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      type: 3
+      objectTypeName: UnityEngine.GameObject
+      floatValues: []
+      intValues: 
+      boolValues: 
+      stringValues: []
+      vector4Values: []
+      objectReferences:
+      - {fileID: 6653928247421230287, guid: c8ea9b4b41f4e6842a83adf79f844881, type: 3}
+      - {fileID: 4052118044696883821, guid: ed5cbbe1850be024ba302bf19d9ef565, type: 3}
+      - {fileID: 4467043909420714823, guid: 5f6293e65fa4a7e4db660fac3d82232e, type: 3}
+      - {fileID: 1579197969785654069, guid: b149e51b4fb735b45ade389e258558eb, type: 3}
+      - {fileID: 7207444423716601647, guid: a182e9cc781248c49ae4a592ed38b8ce, type: 3}
+      - {fileID: 8381282367526377007, guid: 72251895b0829e04b9df72f404f765a3, type: 3}
+      - {fileID: 5819315381170307424, guid: bf70b96d6b7c29d44b35d4169f6511e7, type: 3}
+      - {fileID: 1324466865179868808, guid: 3e0e38156101b02479d99d29fdc68f0d, type: 3}
+      - {fileID: 7232461353935636031, guid: dd5200b107a680a43a7849cf09feb58c, type: 3}
+      - {fileID: 6402151123857430444, guid: 4e8a277f725b65b42b13e4542e5fdb76, type: 3}
+      - {fileID: 7072501292043132781, guid: c5414a246955b704295de13d474b53ad, type: 3}
+      - {fileID: 3416254191629412206, guid: 39b707d7e5a6ab04c87a12ff0bcbac5a, type: 3}
+      - {fileID: 7818469370059873548, guid: 4ebad02eb3767434aa8a208ac4da79ec, type: 3}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
     enumVariables: []
     categories:
     - 
@@ -1126,3 +1126,6 @@ MonoBehaviour:
   - Notif_constructionnotavailable
   - Right Click
   - Refresh Generation
+  - Refresh Resource Pop
+  - Refresh Resource Oxy
+  - Refresh Resource Ore
