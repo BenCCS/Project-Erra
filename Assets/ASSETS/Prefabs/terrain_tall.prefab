@@ -1106,8 +1106,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 199.85156
-        y: 142.0625
+        x: 216.22656
+        y: 142.01562
         width: 115
         height: 48
       isBreakpoint: 0
@@ -1248,8 +1248,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 347.07812
-        y: 112.97656
+        x: 393.29688
+        y: 115.91406
         width: 106
         height: 16
       isBreakpoint: 0
@@ -1317,8 +1317,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 477.4375
-        y: 174.32812
+        x: 523.65625
+        y: 177.26562
         width: 124
         height: 32
       isBreakpoint: 0
@@ -1593,8 +1593,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 342.82812
-        y: 175.46094
+        x: 389.04688
+        y: 178.39844
         width: 100
         height: 32
       isBreakpoint: 0
@@ -2809,8 +2809,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 634.35156
-        y: 173.03125
+        x: 680.5703
+        y: 175.96875
         width: 100
         height: 16
       isBreakpoint: 0
