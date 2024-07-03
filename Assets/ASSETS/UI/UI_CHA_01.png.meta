@@ -1,0 +1,548 @@
+fileFormatVersion: 2
+guid: 966674186bfc92b4bb3295b3adbaad99
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: UI_CHA_Vertical
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 177
+        width: 80
+        height: 982
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 150, z: 0, w: 50}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03cfc083c8ea30c48a81f4b762894bdf
+      internalID: -163303118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_CHA_Verticalbckg
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 177
+        width: 80
+        height: 983
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 150, z: 0, w: 50}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d573275fb158294bb7e1ef55369898c
+      internalID: 1203336683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_CHA_Verticallight
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 159
+        width: 124
+        height: 1017
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 150, z: 0, w: 50}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0df71d0209b78224fb2219af43acf290
+      internalID: 218637831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_CHA_deco03
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 784
+        width: 541
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 20, y: 0, z: 20, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0de5500861814448a7de895ab8faff9
+      internalID: 1630768923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_CHA_deco04
+      rect:
+        serializedVersion: 2
+        x: 1246
+        y: 708
+        width: 94
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06283c29590e496449c3dbac4b989176
+      internalID: 520652693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_CHA_deco04soft
+      rect:
+        serializedVersion: 2
+        x: 1385
+        y: 711
+        width: 92
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 934b0207924bce049b753d047ae0f308
+      internalID: 960024582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_CHA_deco04light
+      rect:
+        serializedVersion: 2
+        x: 1514
+        y: 684
+        width: 128
+        height: 129
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22c164ed995e49c4387ace7d87a439f4
+      internalID: -1052035700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_CHA_deco03light
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 723
+        width: 632
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 90, y: 0, z: 90, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b893dfc898af6443b720d3bac249ef9
+      internalID: -481906187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_CHA_deco02
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 555
+        width: 80
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da3297374b222c240988ac2a273b0979
+      internalID: -1747708985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_CHA_deco02bckg
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 536
+        width: 100
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b16263db8559fe74c94dfbd7a37b0121
+      internalID: 1443156129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_CHA_deco02light
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 518
+        width: 113
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a8838bdcd83bf149b69ff2f9ed5b7c8
+      internalID: -1581888130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_CHA_Horizontallight
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 371
+        width: 791
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 50, y: 0, z: 50, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47b54b6c9b608574784a77ee0118219d
+      internalID: -1244080202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_CHA_deco01light
+      rect:
+        serializedVersion: 2
+        x: 1734
+        y: 313
+        width: 5
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 10, z: 0, w: 10}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a67c45e951392041b40026b7d27d41f
+      internalID: 537617007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_CHA_deco01
+      rect:
+        serializedVersion: 2
+        x: 1808
+        y: 354
+        width: 5
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 10, z: 0, w: 10}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a7acaa040f7a7b4cbd272dd77602c14
+      internalID: 1637285937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_CHA_Horizontalbckg
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 280
+        width: 766
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 50, y: 0, z: 50, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 688cf69ed2a68564cb58d96b57114a50
+      internalID: -295707510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_CHA_Horizontal
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 181
+        width: 763
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 50, y: 0, z: 50, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c19fb08b5dcf9bc40ab1424873591a2c
+      internalID: -1445515978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_CHA_deco05
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 128
+        width: 150
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 4, y: 0, z: 4, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: def1fc577f107434fb092b7075e9e4d4
+      internalID: 641735890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_CHA_deco06
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 114
+        width: 150
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 4, y: 0, z: 4, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3e9bd8ea11070e4a80ae095c6cdca1c
+      internalID: 416283554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      UI_CHA_01_13: 797876542
+      UI_CHA_01_15: -412288880
+      UI_CHA_01_16: 1706986513
+      UI_CHA_01_20: 324224694
+      UI_CHA_01_21: 2034638619
+      UI_CHA_01_22: -1729258574
+      UI_CHA_01_23: -181389994
+      UI_CHA_01_25: -648345987
+      UI_CHA_01_26: 1842595956
+      UI_CHA_01_27: -2119790647
+      UI_CHA_01_28: 1378307953
+      UI_CHA_01_3: 524588290
+      UI_CHA_01_32: -154356600
+      UI_CHA_01_33: 1862718271
+      UI_CHA_01_34: 549695744
+      UI_CHA_01_35: -945612533
+      UI_CHA_01_36: -1327306504
+      UI_CHA_01_37: -1799451035
+      UI_CHA_01_39: 1533801979
+      UI_CHA_01_4: 567571341
+      UI_CHA_01_40: 888982083
+      UI_CHA_01_41: -2044594879
+      UI_CHA_01_42: -1324378224
+      UI_CHA_01_43: 293048878
+      UI_CHA_01_44: 1511376599
+      UI_CHA_01_5: 11147768
+      UI_CHA_01_6: -95524154
+      UI_CHA_01_8: 2057276938
+      UI_CHA_Horizontal: -1445515978
+      UI_CHA_Horizontalbckg: -295707510
+      UI_CHA_Horizontallight: -1244080202
+      UI_CHA_Vertical: -163303118
+      UI_CHA_Verticalbckg: 1203336683
+      UI_CHA_Verticallight: 218637831
+      UI_CHA_deco01: 1637285937
+      UI_CHA_deco01light: 537617007
+      UI_CHA_deco02: -1747708985
+      UI_CHA_deco02bckg: 1443156129
+      UI_CHA_deco02light: -1581888130
+      UI_CHA_deco03: 1630768923
+      UI_CHA_deco03light: -481906187
+      UI_CHA_deco04: 520652693
+      UI_CHA_deco04light: -1052035700
+      UI_CHA_deco04soft: 960024582
+      UI_CHA_deco05: 641735890
+      UI_CHA_deco06: 416283554
+      UI_deco01: 938564346
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
