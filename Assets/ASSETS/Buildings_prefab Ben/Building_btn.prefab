@@ -191,6 +191,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7102675645691308333}
+  - {fileID: 124941055736564399}
   - {fileID: 1030092053649406273}
   - {fileID: 79031908643310733}
   m_Father: {fileID: 0}
@@ -621,8 +622,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 203.9375
-        y: 200.625
+        x: 213.88281
+        y: 199.14062
         width: 164
         height: 32
       isBreakpoint: 0
@@ -641,13 +642,15 @@ MonoBehaviour:
         actionNames:
         - HutongGames.PlayMaker.Actions.ArrayGet
         - HutongGames.PlayMaker.Actions.ArrayGet
+        - HutongGames.PlayMaker.Actions.ArrayGet
         customNames:
         - 
         - 
-        actionEnabled: 0101
-        actionIsOpen: 0101
-        actionStartIndex: 0000000005000000
-        actionHashCodes: 6ba593016ba59301
+        - 
+        actionEnabled: 010101
+        actionIsOpen: 010101
+        actionStartIndex: 00000000050000000a000000
+        actionHashCodes: 6ba593016ba593016ba59301
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -688,6 +691,30 @@ MonoBehaviour:
           objectType: UnityEngine.Object
           useVariable: 1
           type: 4
+          floatValue: 0
+          intValue: 0
+          boolValue: 0
+          stringValue: 
+          vector4Value: {x: 0, y: 0, z: 0, w: 0}
+          objectReference: {fileID: 0}
+          arrayValue:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            type: -1
+            objectTypeName: 
+            floatValues: []
+            intValues: 
+            boolValues: 
+            stringValues: []
+            vector4Values: []
+            objectReferences: []
+        - variableName: BuildingImage_sprite
+          objectType: UnityEngine.Sprite
+          useVariable: 1
+          type: 12
           floatValue: 0
           intValue: 0
           boolValue: 0
@@ -775,9 +802,48 @@ MonoBehaviour:
           - 
           vector4Values: []
           objectReferences: []
+        - useVariable: 1
+          name: Buildings_pics
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          type: 12
+          objectTypeName: UnityEngine.Sprite
+          floatValues: []
+          intValues: 
+          boolValues: 
+          stringValues: []
+          vector4Values: []
+          objectReferences:
+          - {fileID: 0}
+          - {fileID: 21300000, guid: 635a387a8babde844a30ccc014403ec1, type: 3}
+          - {fileID: 0}
+          - {fileID: 0}
+          - {fileID: 0}
+          - {fileID: 0}
+          - {fileID: 0}
+          - {fileID: 0}
+          - {fileID: 0}
+          - {fileID: 0}
+          - {fileID: 0}
+          - {fileID: 0}
+          - {fileID: 0}
+          - {fileID: 0}
+          - {fileID: 0}
+          - {fileID: 0}
+          - {fileID: 0}
+          - {fileID: 0}
+          - {fileID: 0}
+          - {fileID: 0}
         fsmEnumParams: []
         fsmFloatParams: []
         fsmIntParams:
+        - useVariable: 1
+          name: BuildingID
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         - useVariable: 1
           name: BuildingID
           tooltip: 
@@ -799,12 +865,13 @@ MonoBehaviour:
         stringParams:
         - 
         - 
-        byteData: 0000
+        - 
+        byteData: 000000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 29000000100000002700000001000000170000002900000010000000270000000100000017000000
+        paramDataType: 290000001000000027000000010000001700000029000000100000002700000001000000170000002900000010000000270000000100000017000000
         paramName:
         - array
         - index
@@ -816,8 +883,13 @@ MonoBehaviour:
         - storeValue
         - everyFrame
         - indexOutOfRange
-        paramDataPos: 00000000000000000000000000000000000000000100000001000000010000000100000001000000
-        paramByteDataSize: 00000000000000000000000001000000000000000000000000000000000000000100000000000000
+        - array
+        - index
+        - storeValue
+        - everyFrame
+        - indexOutOfRange
+        paramDataPos: 000000000000000000000000000000000000000001000000010000000100000001000000010000000200000002000000020000000200000002000000
+        paramByteDataSize: 000000000000000000000000010000000000000000000000000000000000000001000000000000000000000000000000000000000100000000000000
     - name: Setup
       description: 
       colorIndex: 0
@@ -835,13 +907,15 @@ MonoBehaviour:
         actionNames:
         - HutongGames.PlayMaker.Actions.UiTextSetText
         - HutongGames.PlayMaker.Actions.SetProperty
+        - HutongGames.PlayMaker.Actions.UiImageSetSprite
         customNames:
         - 
         - 
-        actionEnabled: 0101
-        actionIsOpen: 0101
-        actionStartIndex: 0000000004000000
-        actionHashCodes: 09fbab045ac85204
+        - 
+        actionEnabled: 010101
+        actionIsOpen: 010101
+        actionStartIndex: 000000000400000006000000
+        actionHashCodes: 09fbab045ac85204c4b05004
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams:
@@ -853,6 +927,14 @@ MonoBehaviour:
             showInInspector: 0
             networkSync: 0
             value: {fileID: 1466878854110447639}
+        - ownerOption: 1
+          gameObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 7306427442968988677}
         animationCurveParams: []
         functionCallParams: []
         fsmTemplateControlParams: []
@@ -998,13 +1080,26 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 
-        fsmObjectParams: []
+        fsmObjectParams:
+        - useVariable: 1
+          name: BuildingImage_sprite
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          typeName: UnityEngine.Sprite
+          value: {fileID: 0}
         fsmVarParams: []
         fsmArrayParams: []
         fsmEnumParams: []
         fsmFloatParams: []
         fsmIntParams: []
         fsmBoolParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         - useVariable: 0
           name: 
           tooltip: 
@@ -1022,7 +1117,7 @@ MonoBehaviour:
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 140000001200000011000000010000002400000001000000
+        paramDataType: 140000001200000011000000010000002400000001000000140000001800000011000000
         paramName:
         - gameObject
         - text
@@ -1030,8 +1125,11 @@ MonoBehaviour:
         - everyFrame
         - targetProperty
         - everyFrame
-        paramDataPos: 000000000000000000000000000000000000000001000000
-        paramByteDataSize: 000000000000000000000000010000000000000001000000
+        - gameObject
+        - sprite
+        - resetOnExit
+        paramDataPos: 000000000000000000000000000000000000000001000000010000000000000001000000
+        paramByteDataSize: 000000000000000000000000010000000000000001000000000000000000000000000000
     - name: State 4
       description: 
       colorIndex: 0
@@ -2162,7 +2260,14 @@ MonoBehaviour:
         showInInspector: 0
         networkSync: 0
         value: {fileID: 0}
-      objectVariables: []
+      objectVariables:
+      - useVariable: 1
+        name: BuildingImage_sprite
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        typeName: UnityEngine.Sprite
+        value: {fileID: 0}
       materialVariables: []
       textureVariables: []
       arrayVariables:
@@ -2182,7 +2287,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+      variableCategoryIDs: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -2303,6 +2408,82 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &7306427442968988677
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 124941055736564399}
+  - component: {fileID: 2670581561262987847}
+  - component: {fileID: 586949636745674508}
+  m_Layer: 0
+  m_Name: Building_image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &124941055736564399
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7306427442968988677}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4625833340536188712}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &2670581561262987847
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7306427442968988677}
+  m_CullTransparentMesh: 1
+--- !u!114 &586949636745674508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7306427442968988677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 592058cf2146a3840a217a1cde28b8eb, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &7915269867126901921
 GameObject:
   m_ObjectHideFlags: 0
@@ -2335,7 +2516,7 @@ RectTransform:
   m_Children:
   - {fileID: 3360024401725173616}
   m_Father: {fileID: 4625833340536188712}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2412,7 +2593,7 @@ RectTransform:
   m_Children:
   - {fileID: 2393676252716759439}
   m_Father: {fileID: 4625833340536188712}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
