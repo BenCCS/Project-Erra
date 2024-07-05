@@ -2396,7 +2396,7 @@ PrefabInstance:
     - target: {fileID: 8777512860514912677, guid: 47f2e33856e668d44a6849d67fc3e335,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8777512860514912677, guid: 47f2e33856e668d44a6849d67fc3e335,
         type: 3}
@@ -26615,7 +26615,7 @@ PrefabInstance:
     - target: {fileID: 6634022805721940993, guid: 4a56e8c3430a6a84286596db06d7dd66,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6634022805721940993, guid: 4a56e8c3430a6a84286596db06d7dd66,
         type: 3}
@@ -29193,7 +29193,7 @@ PrefabInstance:
     - target: {fileID: 2487725384005824451, guid: ea08f2997f76f4546be7c2aa3d4b3f39,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2487725384005824451, guid: ea08f2997f76f4546be7c2aa3d4b3f39,
         type: 3}
@@ -31474,7 +31474,7 @@ PrefabInstance:
     - target: {fileID: 5156526718994167296, guid: 3eb9208367fdb4044a0b87363e66e3ce,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5156526718994167296, guid: 3eb9208367fdb4044a0b87363e66e3ce,
         type: 3}
@@ -33520,7 +33520,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: {r: 0.16470589, g: 0.16470589, b: 0.16470589, a: 1}
+          value: {r: 1, g: 1, b: 1, a: 1}
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams: []
@@ -34983,7 +34983,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: {r: 0.16470589, g: 0.16470589, b: 0.16470589, a: 1}
+          value: {r: 1, g: 1, b: 1, a: 1}
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams: []
