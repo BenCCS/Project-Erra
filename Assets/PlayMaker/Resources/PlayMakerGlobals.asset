@@ -1279,11 +1279,11 @@ MonoBehaviour:
       objectReferences:
       - {fileID: 0}
       - {fileID: 21300000, guid: 635a387a8babde844a30ccc014403ec1, type: 3}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
+      - {fileID: 21300000, guid: 1c63c486b976459428ea926b0d3ab13d, type: 3}
+      - {fileID: 21300000, guid: 7ee19f902bef4664a892477d224aa371, type: 3}
+      - {fileID: 21300000, guid: 14daf9b1ba50ec5478ec97da72b2c216, type: 3}
+      - {fileID: 21300000, guid: b95cf8d9422e0674fa7acdda01a9b0ef, type: 3}
+      - {fileID: 21300000, guid: 500346ed384260349b5bb635342492c4, type: 3}
       - {fileID: 0}
       - {fileID: 0}
       - {fileID: 0}
