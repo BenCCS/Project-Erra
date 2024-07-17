@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class EndSlidingArea : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
-    {
+    //private void OnTriggerEnter(Collider other)
+    //{
 
-        if (other.gameObject.CompareTag("Sliding Object"))
-        {
-            other.GetComponent<SlidingObject>().SetCanBeDragged(false);
-        }
-    }
+    //    if (other.gameObject.CompareTag("Sliding Object"))
+    //    {
+    //        other.GetComponent<SlidingObject>().SetCanBeDragged(false);
+    //    }
+    //}
 }

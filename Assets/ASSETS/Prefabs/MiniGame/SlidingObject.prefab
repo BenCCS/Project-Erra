@@ -104,6 +104,7 @@ MonoBehaviour:
   - {fileID: 1142963568968560471, guid: fde3699d58771614aab1746fd1a1051f, type: 3}
   - {fileID: 4525208924630075410, guid: d8766e21bbf5ed74da7f2d6bfb06872d, type: 3}
   - {fileID: -7631604088959949910, guid: 60c174206ae544646834e01ba7e61360, type: 3}
+  - {fileID: 1168186337584548019, guid: f6e3e605937d62d498c57dce7e318256, type: 3}
   _meshFilter: {fileID: 97240061007327869}
   _trailRenderer: {fileID: 3928430443369293346}
   stockAreaRef: {fileID: 0}
@@ -115,7 +116,11 @@ MonoBehaviour:
   _miniGameManager: {fileID: 0}
   sucessVFX: {fileID: 5440147040600757821, guid: 055b1425c321c6848b4fe8058159525c,
     type: 3}
-  unSucessVFX: {fileID: 187952, guid: c05e92eaee7a00844867e5edc8e0dde1, type: 3}
+  unSucessVFX: {fileID: 1531182394147574868, guid: 45e58c4f9dff41544be6d3e8f86a4ec8,
+    type: 3}
+  startX: -5.73
+  endX: 8.19
+  duration: 5
 --- !u!65 &4141276600359576403
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -143,7 +148,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 4
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!1 &6617774967030764140
 GameObject:

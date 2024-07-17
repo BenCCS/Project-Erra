@@ -12,6 +12,9 @@ public class MiniGameManager : MonoBehaviour
     public int maxPlayerLives = 3;
     public int playerLives = 0;
 
+    public float spawnInterval = 3f;
+    private float nextSpawn;
+
     [Header("UI")]
 
     public GameObject gameHUD;
@@ -22,12 +25,28 @@ public class MiniGameManager : MonoBehaviour
     public Text scoreText;
     public Text lifeText;
 
+    private bool canSpawn = false;
+
     private void Start()
     {
         gameHUD.SetActive(false);
         startMenu.SetActive(true);
         endMenu.SetActive(false);
+
+        nextSpawn = Time.time + spawnInterval;
     }
+
+
+    public void Update()
+    {
+        if (Time.time >= nextSpawn && canSpawn)
+        {
+            nextSpawn = Time.time + spawnInterval;
+
+            spawnSlidingObject();
+        }
+    }
+
 
     public void spawnSlidingObject()
     {
@@ -55,7 +74,7 @@ public class MiniGameManager : MonoBehaviour
     {
         playerScore += scoreToAdd;
         scoreText.text = "Score: " + playerScore;
-        Invoke("spawnSlidingObject", 0.5f);
+        //Invoke("spawnSlidingObject", 0.5f);
     }
 
     public void SetLife()
@@ -66,7 +85,7 @@ public class MiniGameManager : MonoBehaviour
 
         if (playerLives > 0)
         {
-            Invoke("spawnSlidingObject", 0.5f);
+            //Invoke("spawnSlidingObject", 0.5f);
         }
         else
         {
@@ -76,7 +95,9 @@ public class MiniGameManager : MonoBehaviour
 
     public void StartMiniGame()
     {
-        spawnSlidingObject();
+        //spawnSlidingObject();
+
+        canSpawn = true;
 
         playerLives = maxPlayerLives;
         playerScore = 0;
@@ -91,7 +112,15 @@ public class MiniGameManager : MonoBehaviour
 
     public void GameOver()
     {
+        canSpawn= false;
         gameHUD.SetActive(false);
         endMenu.SetActive(true);
     }
+
+    public void SetSpawnRate(int _valueToAdd)
+    {
+        spawnInterval += _valueToAdd;
+        spawnInterval = Mathf.Clamp(spawnInterval, 1f, 5f);
+    }
+
 }
