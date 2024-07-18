@@ -140,7 +140,7 @@ public class SlidingObject : MonoBehaviour
         {
             if (selectedColor != objectColor.green)
             {
-                _miniGameManager.SetLife();
+
             }
             //Instantiate(unSucessVFX, transform.position, Quaternion.identity);
             Destroy(gameObject);
@@ -203,20 +203,18 @@ public class SlidingObject : MonoBehaviour
         {
             if (stockAreaRef.requiredColor == selectedColor)
             {
-                _miniGameManager.SetScore(1);
+                _miniGameManager.AddStock(selectedColor);
                 Instantiate(sucessVFX, transform.position, Quaternion.identity);
                 Destroy(gameObject);
             }
             else
             {
-                _miniGameManager.SetLife();
                 Instantiate(unSucessVFX, transform.position, Quaternion.identity);
                 Destroy(gameObject);
             }
         }
         else
         {
-            _miniGameManager.SetLife();
             Instantiate(unSucessVFX, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
