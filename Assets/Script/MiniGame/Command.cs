@@ -58,7 +58,7 @@ public class Command : MonoBehaviour
     public bool CheckCommand()
     {
 
-        if (currentBlueNumber >= blueNumberNeeded && yellowNumberNeeded <= currentYellowNumber && currentRedNumber >= redNumberNeeded)
+        if (currentBlueNumber >= blueNumberNeeded && currentYellowNumber >= yellowNumberNeeded && currentRedNumber >= redNumberNeeded)
         {
             return true;
         }

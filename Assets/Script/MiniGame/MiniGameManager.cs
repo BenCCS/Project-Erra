@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using UnityEngine;
 using UnityEngine.UI;
+//using UnityEngine.UIElements;
 using Color = UnityEngine.Color;
 
 public class MiniGameManager : MonoBehaviour
@@ -13,6 +14,7 @@ public class MiniGameManager : MonoBehaviour
     public int playerScore = 0;
 
     public float spawnInterval = 3f;
+    private float spawnIntervalBase;
     private float nextSpawn;
 
     [Header("UI")]
@@ -32,15 +34,28 @@ public class MiniGameManager : MonoBehaviour
     public Button arrivageBlue;
     public Button arrivageYellow;
 
+    public Button multiply1;
+    public Button multiply2;
+    public Button multiply3;
+
+    private int multiplyIndex;
+
     public GameObject command01;
     public GameObject command02;
     public GameObject command03;
+
+    public Image slowMotionPreogressBar;
+    public float duration = 5;
+    private float currentTime = 0;
+    private bool isFilling = false;
 
     private bool canSpawn = false;
 
     private bool spawnRandomColor = true;
 
     private objectColor arrivageType;
+
+    private bool isInSlowMotion = false;
 
     [Header("Stockage")]
     public int numberRed = 0;
@@ -53,9 +68,14 @@ public class MiniGameManager : MonoBehaviour
         startMenu.SetActive(true);
         endMenu.SetActive(false);
 
+        spawnIntervalBase = spawnInterval;
+
         redNumberText.text = "0";
         yellowNumberText.text = "0";
         blueNumberText.text = "0";
+
+        arrivageRandom.GetComponent<Image>().color = Color.gray;
+        multiply1.GetComponent<Image>().color = Color.gray;
 
         nextSpawn = Time.time + spawnInterval;
     }
@@ -69,7 +89,27 @@ public class MiniGameManager : MonoBehaviour
 
             spawnSlidingObject();
         }
+
+        if (Input.GetKeyDown(KeyCode.Space) && isInSlowMotion == false)
+        {
+            Slowmotion();
+        }
+
+        if (isFilling)
+        {
+            currentTime += Time.deltaTime;
+            float progress = Mathf.Clamp01(1 - currentTime / duration);
+            slowMotionPreogressBar.fillAmount = progress;
+
+            if (currentTime >= duration)
+            {
+                isFilling = false;
+                currentTime = 0f;
+                OnProgressComplete();
+            }
+        }
     }
+
 
 
     public void spawnSlidingObject()
@@ -114,7 +154,7 @@ public class MiniGameManager : MonoBehaviour
     public void SetScore(int scoreToAdd)
     {
         playerScore += scoreToAdd;
-        scoreText.text = "Money: " + playerScore + "$";
+        scoreText.text = new string("Money: " + playerScore + "$");
         //Invoke("spawnSlidingObject", 0.5f);
     }
 
@@ -126,7 +166,7 @@ public class MiniGameManager : MonoBehaviour
 
         playerScore = 0;
 
-        scoreText.text = "Money: " + playerScore + "$";
+        scoreText.text = new string("Money: " + playerScore + "$");
 
         gameHUD.SetActive(true);
         startMenu.SetActive(false);
@@ -140,10 +180,35 @@ public class MiniGameManager : MonoBehaviour
         endMenu.SetActive(true);
     }
 
-    public void SetSpawnRate(int _valueToAdd)
+    public void SetSpawnRate(int _valueToMultiply)
     {
-        spawnInterval += _valueToAdd;
-        spawnInterval = Mathf.Clamp(spawnInterval, 1f, 5f);
+        spawnInterval = spawnIntervalBase / _valueToMultiply;
+
+        multiplyIndex = _valueToMultiply;
+
+        switch (_valueToMultiply)
+        {
+            case 0:
+                break;
+            case 1:
+                spawnInterval = 1;
+                multiplyIndex = 1;
+                multiply1.GetComponent<Image>().color = Color.gray;
+                multiply2.GetComponent<Image>().color = Color.white;
+                multiply3.GetComponent<Image>().color = Color.white;
+                break;
+            case 2:
+                multiply1.GetComponent<Image>().color = Color.white;
+                multiply2.GetComponent<Image>().color = Color.gray;
+                multiply3.GetComponent<Image>().color = Color.white;
+                break;
+            case 3:
+                multiply1.GetComponent<Image>().color = Color.white;
+                multiply2.GetComponent<Image>().color = Color.white;
+                multiply3.GetComponent<Image>().color = Color.gray;
+                break;
+        }
+
     }
 
     public void SelectArrivageType(int selectedColorIndex)
@@ -186,7 +251,41 @@ public class MiniGameManager : MonoBehaviour
 
     public void Slowmotion()
     {
+        slowMotionPreogressBar.color = Color.gray;
 
+        multiply1.GetComponent<Image>().color = Color.white;
+        multiply2.GetComponent<Image>().color = Color.white;
+        multiply3.GetComponent<Image>().color = Color.white;
+
+        StartCoroutine(SetSlowmotion(5, duration));
+        isFilling = true;
+        currentTime = 0f;
+    }
+
+    private void OnProgressComplete()
+    {
+        slowMotionPreogressBar.color = Color.white;
+
+        switch (multiplyIndex)
+        {
+            case 0:
+                break;
+            case 1:
+                multiply1.GetComponent<Image>().color = Color.gray;
+                multiply2.GetComponent<Image>().color = Color.white;
+                multiply3.GetComponent<Image>().color = Color.white;
+                break;
+            case 2:
+                multiply1.GetComponent<Image>().color = Color.white;
+                multiply2.GetComponent<Image>().color = Color.gray;
+                multiply3.GetComponent<Image>().color = Color.white;
+                break;
+            case 3:
+                multiply1.GetComponent<Image>().color = Color.white;
+                multiply2.GetComponent<Image>().color = Color.white;
+                multiply3.GetComponent<Image>().color = Color.gray;
+                break;
+        }
     }
 
     public void AddStock(objectColor _Color)
@@ -232,26 +331,47 @@ public class MiniGameManager : MonoBehaviour
         if (_Command.GetComponent<Command>().CheckCommand())
         {
 
-            Debug.Log("Sell Command");
-
             _Command.GetComponent<Command>().SetCommand();
             int moneyToAdd = Random.Range(5, 16);
 
             numberRed -= _Command.GetComponent<Command>().redNumberNeeded;
+            if (numberRed < 0)
+            {
+                numberRed = 0;
+            }
             numberYellow -= _Command.GetComponent<Command>().yellowNumberNeeded;
+            if (numberYellow < 0)
+            {
+                numberYellow = 0;
+            }
             numberBlue -= _Command.GetComponent<Command>().blueNumberNeeded;
+            if (numberBlue < 0)
+            {
+                numberBlue = 0;
+            }
 
             blueNumberText.text = numberBlue.ToString();
             yellowNumberText.text = numberYellow.ToString();
             redNumberText.text = numberRed.ToString();
 
             playerScore += moneyToAdd;
-            scoreText.text = playerScore.ToString();
-        }
-        else
-        {
-            Debug.Log("Can't Sell Command");
+            scoreText.text = new string("Money: " + playerScore + "$");
         }
 
     }
+
+    private IEnumerator SetSlowmotion(float _slowValue, float seconds) 
+    {
+
+        float baseValue = spawnInterval;
+        spawnInterval = _slowValue;
+        isInSlowMotion = true;
+
+        yield return new WaitForSeconds(seconds);
+
+        isInSlowMotion = false;
+        spawnInterval = baseValue;
+
+    }
+
 }
