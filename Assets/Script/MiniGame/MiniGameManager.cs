@@ -57,10 +57,14 @@ public class MiniGameManager : MonoBehaviour
 
     private bool isInSlowMotion = false;
 
+    private List<SlidingObject> spawnList = new List<SlidingObject>();
+
     [Header("Stockage")]
     public int numberRed = 0;
     public int numberBlue = 0;
     public int numberYellow = 0;
+
+    private bool slowmotionIsActivate = false;
 
     private void Start()
     {
@@ -79,7 +83,6 @@ public class MiniGameManager : MonoBehaviour
 
         nextSpawn = Time.time + spawnInterval;
     }
-
 
     public void Update()
     {
@@ -110,8 +113,6 @@ public class MiniGameManager : MonoBehaviour
         }
     }
 
-
-
     public void spawnSlidingObject()
     {
 
@@ -135,9 +136,20 @@ public class MiniGameManager : MonoBehaviour
         }
 
         GameObject slidingObjectRef = Instantiate(slidingObject, spawnPoint);
+        spawnList.Add(slidingObjectRef.GetComponent<SlidingObject>());
         slidingObjectRef.GetComponent<SlidingObject>().SetObjectColor(randomColor);
         slidingObjectRef.GetComponent<SlidingObject>()._miniGameManager = this;
 
+        if (slowmotionIsActivate == false)
+        {
+            //slidingObjectRef.GetComponent<SlidingObject>().SetSpeed(false);
+        }
+        else
+        {
+            slidingObjectRef.GetComponent<SlidingObject>().SetSpeed(true);
+        }
+
+        //Debug.Log(slidingObjectRef.transform.position.ToString());
     }
 
     T GetRandomEnum<T>()
@@ -251,6 +263,19 @@ public class MiniGameManager : MonoBehaviour
 
     public void Slowmotion()
     {
+
+        for (int i = 0;spawnList.Count > 0;i++)
+        {
+            if (spawnList[i] == null)
+            {
+                spawnList.RemoveAt(i);
+            }
+            else
+            {
+                spawnList[i].GetComponent<SlidingObject>().SetSpeed(true);
+            }
+        }
+
         slowMotionPreogressBar.color = Color.gray;
 
         multiply1.GetComponent<Image>().color = Color.white;
@@ -331,7 +356,6 @@ public class MiniGameManager : MonoBehaviour
         if (_Command.GetComponent<Command>().CheckCommand())
         {
 
-            _Command.GetComponent<Command>().SetCommand();
             int moneyToAdd = Random.Range(5, 16);
 
             numberRed -= _Command.GetComponent<Command>().redNumberNeeded;
@@ -354,6 +378,14 @@ public class MiniGameManager : MonoBehaviour
             yellowNumberText.text = numberYellow.ToString();
             redNumberText.text = numberRed.ToString();
 
+            _Command.GetComponent<Command>().SetCommand();
+            _Command.GetComponent<Command>().currentRedNumber = numberRed;
+            _Command.GetComponent<Command>().currentBlueNumber = numberBlue;
+            _Command.GetComponent<Command>().currentYellowNumber = numberYellow;
+            _Command.GetComponent<Command>().SetAllText();
+
+            SetAllCommandText();
+
             playerScore += moneyToAdd;
             scoreText.text = new string("Money: " + playerScore + "$");
         }
@@ -371,7 +403,32 @@ public class MiniGameManager : MonoBehaviour
 
         isInSlowMotion = false;
         spawnInterval = baseValue;
+        for (int i = 0; spawnList.Count > 0; i++)
+        {
+            if (spawnList[i] != null)
+            {
+                spawnList[i].GetComponent<SlidingObject>().SetSpeed(false);
+            }
+        }
 
     }
 
+    private void SetAllCommandText()
+    {
+        command01.GetComponent<Command>().currentRedNumber = numberRed;
+        command02.GetComponent<Command>().currentRedNumber = numberRed;
+        command03.GetComponent<Command>().currentRedNumber = numberRed;
+
+        command01.GetComponent<Command>().currentYellowNumber = numberYellow;
+        command02.GetComponent<Command>().currentYellowNumber = numberYellow;
+        command03.GetComponent<Command>().currentYellowNumber = numberYellow;
+
+        command01.GetComponent<Command>().currentBlueNumber = numberBlue;
+        command02.GetComponent<Command>().currentBlueNumber = numberBlue;
+        command03.GetComponent<Command>().currentBlueNumber = numberBlue;
+
+        command01.GetComponent<Command>().SetAllText();
+        command02.GetComponent<Command>().SetAllText();
+        command03.GetComponent<Command>().SetAllText();
+    }
 }
