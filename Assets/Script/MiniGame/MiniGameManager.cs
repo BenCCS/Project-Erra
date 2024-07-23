@@ -66,11 +66,15 @@ public class MiniGameManager : MonoBehaviour
 
     private bool slowmotionIsActivate = false;
 
+    private float originalTimeScale;
+
     private void Start()
     {
         gameHUD.SetActive(false);
         startMenu.SetActive(true);
         endMenu.SetActive(false);
+
+        originalTimeScale = Time.timeScale;
 
         spawnIntervalBase = spawnInterval;
 
@@ -264,18 +268,6 @@ public class MiniGameManager : MonoBehaviour
     public void Slowmotion()
     {
 
-        for (int i = 0;spawnList.Count > 0;i++)
-        {
-            if (spawnList[i] == null)
-            {
-                spawnList.RemoveAt(i);
-            }
-            else
-            {
-                spawnList[i].GetComponent<SlidingObject>().SetSpeed(true);
-            }
-        }
-
         slowMotionPreogressBar.color = Color.gray;
 
         multiply1.GetComponent<Image>().color = Color.white;
@@ -395,21 +387,15 @@ public class MiniGameManager : MonoBehaviour
     private IEnumerator SetSlowmotion(float _slowValue, float seconds) 
     {
 
-        float baseValue = spawnInterval;
-        spawnInterval = _slowValue;
         isInSlowMotion = true;
+
+        Time.timeScale = 0.5f;
 
         yield return new WaitForSeconds(seconds);
 
+        Time.timeScale = originalTimeScale;
+
         isInSlowMotion = false;
-        spawnInterval = baseValue;
-        for (int i = 0; spawnList.Count > 0; i++)
-        {
-            if (spawnList[i] != null)
-            {
-                spawnList[i].GetComponent<SlidingObject>().SetSpeed(false);
-            }
-        }
 
     }
 
@@ -431,4 +417,7 @@ public class MiniGameManager : MonoBehaviour
         command02.GetComponent<Command>().SetAllText();
         command03.GetComponent<Command>().SetAllText();
     }
+
+    
+
 }

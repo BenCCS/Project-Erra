@@ -170,6 +170,12 @@ public class SlidingObject : MonoBehaviour
         }
     }
 
+    public void DestroyGameObject()
+    {
+        Instantiate(sucessVFX, transform.position, Quaternion.identity);
+        Destroy(gameObject);
+    }
+
 }
 
 

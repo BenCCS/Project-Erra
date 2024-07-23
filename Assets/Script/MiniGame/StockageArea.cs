@@ -17,6 +17,10 @@ public class StockageArea : MonoBehaviour
     public Text priceText;
     private bool UIisHide = true;
 
+    private bool canGrabObject = false;
+    public float grabInterval = 20f;
+    private float nextGrab = 0;
+
     private void Start()
     {
         for (int i = 0; i < container.Length; i++)
@@ -28,6 +32,13 @@ public class StockageArea : MonoBehaviour
 
     private void Update()
     {
+
+        if (Time.time > nextGrab)
+        {
+            nextGrab = Time.time + grabInterval;
+            canGrabObject = true;
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit hit;
@@ -77,6 +88,30 @@ public class StockageArea : MonoBehaviour
 
         }
 
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (canGrabObject && level >= 2)
+        {
+            if (other.gameObject.tag == "Sliding Object")
+            {
+                if (other.GetComponent<SlidingObject>().selectedColor == requiredColor)
+                {
+                    other.GetComponent<SlidingObject>().DestroyGameObject();
+                    GrabResource();
+                }
+            }
+        }
+
+    }
+
+    private void GrabResource()
+    {
+        miniGameManager.AddStock(requiredColor);
+        Debug.Log("Grab");
+        canGrabObject = false;
     }
 
 }
