@@ -29,6 +29,8 @@ public class MiniGameManager : MonoBehaviour
     public Text blueNumberText;
     public Text yellowNumberText;
 
+    public GameObject moneyEarnedText;
+
     public Button arrivageRandom;
     public Button arrivageRed;
     public Button arrivageBlue;
@@ -73,6 +75,7 @@ public class MiniGameManager : MonoBehaviour
         gameHUD.SetActive(false);
         startMenu.SetActive(true);
         endMenu.SetActive(false);
+        moneyEarnedText.SetActive(false);
 
         originalTimeScale = Time.timeScale;
 
@@ -115,6 +118,28 @@ public class MiniGameManager : MonoBehaviour
                 OnProgressComplete();
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            playerScore += 20;
+            scoreText.text = new string("Money: " + playerScore + "$");
+        }
+
+        if (Input.GetKeyDown(KeyCode.R)) 
+        {
+            AddStock(objectColor.red);
+        }
+
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            AddStock(objectColor.blue);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            AddStock(objectColor.yellow);
+        }
+
     }
 
     public void spawnSlidingObject()
@@ -379,6 +404,7 @@ public class MiniGameManager : MonoBehaviour
             SetAllCommandText();
 
             playerScore += moneyToAdd;
+            StartCoroutine(ShowMoneyEarnedText(1f, moneyToAdd));
             scoreText.text = new string("Money: " + playerScore + "$");
         }
 
@@ -418,6 +444,13 @@ public class MiniGameManager : MonoBehaviour
         command03.GetComponent<Command>().SetAllText();
     }
 
-    
+    IEnumerator ShowMoneyEarnedText(float duration, int _moneyToAdd)
+    {
+        moneyEarnedText.GetComponent<Text>().text = "+" + _moneyToAdd + "$";
+        moneyEarnedText.SetActive(true);
 
+        yield return new WaitForSeconds(duration);
+
+        moneyEarnedText.SetActive(false);
+    }
 }

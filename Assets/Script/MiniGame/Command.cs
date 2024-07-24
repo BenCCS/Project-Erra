@@ -21,6 +21,8 @@ public class Command : MonoBehaviour
     public Image blueImage;
     public Image yellowImage;
 
+    public GameObject checkImage;
+
     public Text redText;
     public Text blueText;
     public Text yellowText;
@@ -43,6 +45,10 @@ public class Command : MonoBehaviour
 
     public void SetCommand()
     {
+        if (checkImage != null)
+        {
+            checkImage.SetActive(false);
+        }
 
         currentRedNumber = 0;
         currentBlueNumber = 0 ;
@@ -73,5 +79,17 @@ public class Command : MonoBehaviour
         SetText(redText, currentRedNumber, redNumberNeeded);
         SetText(blueText, currentBlueNumber, blueNumberNeeded);
         SetText(yellowText, currentYellowNumber, yellowNumberNeeded);
+
+        if (currentBlueNumber >= blueNumberNeeded && currentYellowNumber >= yellowNumberNeeded && currentRedNumber >= redNumberNeeded)
+        {
+            checkImage.SetActive(true);
+        }
+        else
+        {
+            if (checkImage != null)
+            {
+                checkImage.SetActive(false);
+            }
+        }
     }
 }
