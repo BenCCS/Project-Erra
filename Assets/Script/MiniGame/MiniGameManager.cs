@@ -1,3 +1,4 @@
+using Steamworks;
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
@@ -8,11 +9,19 @@ using Color = UnityEngine.Color;
 
 public class MiniGameManager : MonoBehaviour
 {
+    [Header("Camera")]
+    public bool canControlTheCam = true;
+    public CameraMovement cameraMovement;
+
+    [Header("Player")]
+    public int playerScore = 0;
+    public int numberRed = 0;
+    public int numberBlue = 0;
+    public int numberYellow = 0;
+
+    [Header("Sliding Objetcs")]
     public Transform spawnPoint;
     public GameObject slidingObject;
-
-    public int playerScore = 0;
-
     public float spawnInterval = 3f;
     private float spawnIntervalBase;
     private float nextSpawn;
@@ -31,6 +40,8 @@ public class MiniGameManager : MonoBehaviour
 
     public GameObject moneyEarnedText;
 
+    public Image slowMotionPreogressBar;
+
     public Button arrivageRandom;
     public Button arrivageRed;
     public Button arrivageBlue;
@@ -46,7 +57,7 @@ public class MiniGameManager : MonoBehaviour
     public GameObject command02;
     public GameObject command03;
 
-    public Image slowMotionPreogressBar;
+    [Header("SlowMotion")]
     public float duration = 5;
     private float currentTime = 0;
     private bool isFilling = false;
@@ -61,14 +72,33 @@ public class MiniGameManager : MonoBehaviour
 
     private List<SlidingObject> spawnList = new List<SlidingObject>();
 
-    [Header("Stockage")]
-    public int numberRed = 0;
-    public int numberBlue = 0;
-    public int numberYellow = 0;
-
     private bool slowmotionIsActivate = false;
 
     private float originalTimeScale;
+
+    // Phase 2
+    [Header("Phase")]
+    public bool isInPhase2 = false;
+    public Transform phase1CameraTransform;
+    public Transform phase2CameraTransform;
+
+    public LandingPad landingPad;
+
+    // New gameplay
+    public int spawnNumber = 5;
+    public int spawnCount = 0;
+    public int error = 0;
+    public Text errorText;
+
+    public int MaxCommands = 10;
+    public int numberOfCommands = 10;
+    public int currentNumberOfCommands = 0;
+
+    public GameObject truckObject;
+    public Transform truckSpawnPoint;
+    public bool canSpawnTrucks = false;
+
+    public objectColor mouseSelectedColor;
 
     private void Start()
     {
@@ -76,6 +106,8 @@ public class MiniGameManager : MonoBehaviour
         startMenu.SetActive(true);
         endMenu.SetActive(false);
         moneyEarnedText.SetActive(false);
+
+        Camera.main.transform.position = phase1CameraTransform.position;
 
         originalTimeScale = Time.timeScale;
 
@@ -89,16 +121,32 @@ public class MiniGameManager : MonoBehaviour
         multiply1.GetComponent<Image>().color = Color.gray;
 
         nextSpawn = Time.time + spawnInterval;
+
+        cameraMovement.canMove = canControlTheCam;
+
+        spawnNumber = Random.Range(5, 16);
+        spawnCount = 0;
+
+
+        Debug.Log(spawnNumber);
     }
 
     public void Update()
     {
-        if (Time.time >= nextSpawn && canSpawn)
+        if (Time.time >= nextSpawn && canSpawn && spawnNumber > spawnCount)
         {
             nextSpawn = Time.time + spawnInterval;
 
             spawnSlidingObject();
         }
+
+        if (Time.time >= nextSpawn &&  canSpawnTrucks)
+        {
+            nextSpawn = Time.time + spawnInterval;
+
+            SpawnSpaceTruck();
+        }
+
 
         if (Input.GetKeyDown(KeyCode.Space) && isInSlowMotion == false)
         {
@@ -140,6 +188,10 @@ public class MiniGameManager : MonoBehaviour
             AddStock(objectColor.yellow);
         }
 
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            NextPhase();
+        }
     }
 
     public void spawnSlidingObject()
@@ -171,15 +223,29 @@ public class MiniGameManager : MonoBehaviour
 
         if (slowmotionIsActivate == false)
         {
-            //slidingObjectRef.GetComponent<SlidingObject>().SetSpeed(false);
+            
         }
         else
         {
             slidingObjectRef.GetComponent<SlidingObject>().SetSpeed(true);
         }
 
-        //Debug.Log(slidingObjectRef.transform.position.ToString());
+        spawnCount += 1;
+
+        if (spawnNumber <= spawnCount)
+        {
+            NextPhase();
+        }
+
     }
+
+    public void SpawnSpaceTruck()
+    {
+        GameObject truckObjectRef = Instantiate(truckObject, truckSpawnPoint);
+        truckObjectRef.GetComponent<SpaceTruck>().miniGameManager = this;
+    }
+
+
 
     T GetRandomEnum<T>()
     {
@@ -196,7 +262,6 @@ public class MiniGameManager : MonoBehaviour
     {
         playerScore += scoreToAdd;
         scoreText.text = new string("Money: " + playerScore + "$");
-        //Invoke("spawnSlidingObject", 0.5f);
     }
 
     public void StartMiniGame()
@@ -452,5 +517,65 @@ public class MiniGameManager : MonoBehaviour
         yield return new WaitForSeconds(duration);
 
         moneyEarnedText.SetActive(false);
+    }
+
+
+
+    public void NextPhase()
+    {
+        if(isInPhase2 == false)
+        {
+            scoreText.gameObject.SetActive(true);
+            errorText.gameObject.SetActive(false);
+
+            spawnInterval = 10;
+            isInPhase2 = true;
+            canSpawn = false;
+            canSpawnTrucks = true;
+            CalculateNumberOfCommands();
+            Camera.main.transform.position = phase2CameraTransform.position;
+            if (landingPad.UIisHide == true)
+            {
+                landingPad.HideUI();
+            }
+        }
+        else
+        {
+            isInPhase2 = false;
+            canSpawn = true;
+            Camera.main.transform.position = phase1CameraTransform.position;
+        }
+    }
+
+    public void AddError()
+    {
+        error += 1;
+        errorText.text = "Errors : " + error;
+    }
+
+    public void CalculateNumberOfCommands()
+    {
+       
+        if (error == spawnCount)
+        {
+            GameOver();
+        }
+        else if(error == 0) 
+        {
+            numberOfCommands = MaxCommands;
+        }
+        else
+        {
+
+            int temp = error * 100;
+            int temp2 = temp / spawnNumber;
+
+            int temp3 = temp * MaxCommands;
+            int temp4 = temp3 / 100;
+
+            numberOfCommands = MaxCommands - temp4;
+
+            Debug.Log(temp2);
+        }
     }
 }

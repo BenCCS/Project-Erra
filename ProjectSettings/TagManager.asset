@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Sliding Object
   - StockageArea
+  - SpaceTruck
   layers:
   - Default
   - TransparentFX

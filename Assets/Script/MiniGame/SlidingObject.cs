@@ -159,12 +159,14 @@ public class SlidingObject : MonoBehaviour
             }
             else
             {
+                _miniGameManager.AddError();
                 Instantiate(unSucessVFX, transform.position, Quaternion.identity);
                 Destroy(gameObject);
             }
         }
         else
         {
+            _miniGameManager.AddError();
             Instantiate(unSucessVFX, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }

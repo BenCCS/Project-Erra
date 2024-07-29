@@ -5,7 +5,7 @@ using UnityEngine;
 public class LandingPad : MonoBehaviour
 {
     public GameObject arrivageUI;
-    private bool UIisHide = false;
+    public bool UIisHide = false;
 
     public GameObject container01;
     public GameObject container02;
@@ -13,6 +13,10 @@ public class LandingPad : MonoBehaviour
     public GameObject container04;
 
     public Mesh[] containerMesh;
+
+    private MiniGameManager miniGameManager;
+
+    
 
     void Start()
     {
@@ -22,33 +26,33 @@ public class LandingPad : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    RaycastHit hit;
+        //    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            if (Physics.Raycast(ray, out hit) && hit.transform == transform)
-            {
+        //    if (Physics.Raycast(ray, out hit) && hit.transform == transform)
+        //    {
                 
-                if (!UIisHide)
-                {
-                    UIisHide = true;
-                    arrivageUI.SetActive(true);
-                }
-                //else
-                //{
-                //    UIisHide = false;
-                //    arrivageUI.SetActive(false);
-                //}
-            }
-            else
-            {
-                if (UIisHide)
-                {
-                   Invoke("HideUI",1f);
-                }
-            }
-        }
+        //        if (!UIisHide)
+        //        {
+        //            UIisHide = true;
+        //            arrivageUI.SetActive(true);
+        //        }
+        //        //else
+        //        //{
+        //        //    UIisHide = false;
+        //        //    arrivageUI.SetActive(false);
+        //        //}
+        //    }
+        //    else
+        //    {
+        //        if (UIisHide)
+        //        {
+        //           Invoke("HideUI",1f);
+        //        }
+        //    }
+        //}
 
     }
 
