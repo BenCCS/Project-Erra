@@ -533,7 +533,7 @@ public class MiniGameManager : MonoBehaviour
             canSpawn = false;
             canSpawnTrucks = true;
             CalculateNumberOfCommands();
-            Camera.main.transform.position = phase2CameraTransform.position;
+            
             if (landingPad.UIisHide == true)
             {
                 landingPad.HideUI();
