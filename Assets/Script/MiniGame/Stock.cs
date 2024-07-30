@@ -55,22 +55,22 @@ public class Stock : MonoBehaviour
             }
         }
 
-        void SelectIngredient()
-        {
-            Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit))
-            {
-                foreach (GameObject prefab in ingredientPrefabs)
-                {
-                    if (hit.collider.gameObject == prefab)
-                    {
-                        selectedIngredient = Instantiate(prefab, hit.point, Quaternion.identity);
-                        break;
-                    }
-                }
-            }
-        }
+        //void SelectIngredient()
+        //{
+        //    Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+        //    RaycastHit hit;
+        //    if (Physics.Raycast(ray, out hit))
+        //    {
+        //        foreach (GameObject prefab in ingredientPrefabs)
+        //        {
+        //            if (hit.collider.gameObject == prefab)
+        //            {
+        //                selectedIngredient = Instantiate(prefab, hit.point, Quaternion.identity);
+        //                break;
+        //            }
+        //        }
+        //    }
+        //}
 
     }
 

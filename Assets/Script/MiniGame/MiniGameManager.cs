@@ -80,7 +80,7 @@ public class MiniGameManager : MonoBehaviour
     [Header("Phase")]
     public bool isInPhase2 = false;
     public Transform phase1CameraTransform;
-    public Transform phase2CameraTransform;
+    
 
     public LandingPad landingPad;
 
@@ -107,7 +107,7 @@ public class MiniGameManager : MonoBehaviour
         endMenu.SetActive(false);
         moneyEarnedText.SetActive(false);
 
-        Camera.main.transform.position = phase1CameraTransform.position;
+       // Camera.main.transform.position = phase1CameraTransform.position;
 
         originalTimeScale = Time.timeScale;
 
@@ -133,7 +133,7 @@ public class MiniGameManager : MonoBehaviour
 
     public void Update()
     {
-        if (Time.time >= nextSpawn && canSpawn && spawnNumber > spawnCount)
+        if (Time.time >= nextSpawn && canSpawn)
         {
             nextSpawn = Time.time + spawnInterval;
 
@@ -230,12 +230,12 @@ public class MiniGameManager : MonoBehaviour
             slidingObjectRef.GetComponent<SlidingObject>().SetSpeed(true);
         }
 
-        spawnCount += 1;
+        //spawnCount += 1;
 
-        if (spawnNumber <= spawnCount)
-        {
-            NextPhase();
-        }
+        //if (spawnNumber <= spawnCount)
+        //{
+        //    NextPhase();
+        //}
 
     }
 

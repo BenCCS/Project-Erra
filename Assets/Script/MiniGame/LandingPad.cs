@@ -26,33 +26,33 @@ public class LandingPad : MonoBehaviour
     void Update()
     {
 
-        //if (Input.GetMouseButtonDown(0))
-        //{
-        //    RaycastHit hit;
-        //    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Input.GetMouseButtonDown(0))
+        {
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        //    if (Physics.Raycast(ray, out hit) && hit.transform == transform)
-        //    {
-                
-        //        if (!UIisHide)
-        //        {
-        //            UIisHide = true;
-        //            arrivageUI.SetActive(true);
-        //        }
-        //        //else
-        //        //{
-        //        //    UIisHide = false;
-        //        //    arrivageUI.SetActive(false);
-        //        //}
-        //    }
-        //    else
-        //    {
-        //        if (UIisHide)
-        //        {
-        //           Invoke("HideUI",1f);
-        //        }
-        //    }
-        //}
+            if (Physics.Raycast(ray, out hit) && hit.transform == transform)
+            {
+
+                if (!UIisHide)
+                {
+                    UIisHide = true;
+                    arrivageUI.SetActive(true);
+                }
+                //else
+                //{
+                //    UIisHide = false;
+                //    arrivageUI.SetActive(false);
+                //}
+            }
+            else
+            {
+                if (UIisHide)
+                {
+                    Invoke("HideUI", 1f);
+                }
+            }
+        }
 
     }
 
