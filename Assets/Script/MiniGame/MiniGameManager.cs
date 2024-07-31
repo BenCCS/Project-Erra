@@ -124,11 +124,11 @@ public class MiniGameManager : MonoBehaviour
 
         cameraMovement.canMove = canControlTheCam;
 
-        spawnNumber = Random.Range(5, 16);
-        spawnCount = 0;
+        // spawnNumber = Random.Range(5, 16);
+        // spawnCount = 0;
 
 
-        Debug.Log(spawnNumber);
+        // Debug.Log(spawnNumber);
     }
 
     public void Update()
@@ -421,6 +421,43 @@ public class MiniGameManager : MonoBehaviour
                 break;
             case objectColor.blue:
                 numberBlue += 1;
+                blueNumberText.text = numberBlue.ToString();
+                command01.GetComponent<Command>().currentBlueNumber = numberBlue;
+                command02.GetComponent<Command>().currentBlueNumber = numberBlue;
+                command03.GetComponent<Command>().currentBlueNumber = numberBlue;
+                command01.GetComponent<Command>().SetAllText();
+                command02.GetComponent<Command>().SetAllText();
+                command03.GetComponent<Command>().SetAllText();
+                break;
+        }
+    }
+
+    public void SubstractStock(objectColor _oColor)
+    {
+        switch (_oColor)
+        {
+            case objectColor.red:
+                numberRed -= 1;
+                redNumberText.text = numberRed.ToString();
+                command01.GetComponent<Command>().currentRedNumber = numberRed;
+                command02.GetComponent<Command>().currentRedNumber = numberRed;
+                command03.GetComponent<Command>().currentRedNumber = numberRed;
+                command01.GetComponent<Command>().SetAllText();
+                command02.GetComponent<Command>().SetAllText();
+                command03.GetComponent<Command>().SetAllText();
+                break;
+            case objectColor.yellow:
+                numberYellow -= 1;
+                yellowNumberText.text = numberYellow.ToString();
+                command01.GetComponent<Command>().currentYellowNumber = numberYellow;
+                command02.GetComponent<Command>().currentYellowNumber = numberYellow;
+                command03.GetComponent<Command>().currentYellowNumber = numberYellow;
+                command01.GetComponent<Command>().SetAllText();
+                command02.GetComponent<Command>().SetAllText();
+                command03.GetComponent<Command>().SetAllText();
+                break;
+            case objectColor.blue:
+                numberBlue -= 1;
                 blueNumberText.text = numberBlue.ToString();
                 command01.GetComponent<Command>().currentBlueNumber = numberBlue;
                 command02.GetComponent<Command>().currentBlueNumber = numberBlue;

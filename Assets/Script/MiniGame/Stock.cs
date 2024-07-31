@@ -7,7 +7,6 @@ public class Stock : MonoBehaviour
 
     public objectColor stockColor;
     private int colorIndex = 0;
-
     public GameObject[] ingredientPrefabs;
     private GameObject currentIngredient;
     private bool isHoldingIngredient = false;
@@ -17,6 +16,11 @@ public class Stock : MonoBehaviour
 
     public MiniGameManager miniGameManager;
 
+    [Header("Lines")]
+    public LineRenderer linerendererRed;
+    public LineRenderer linerendererBlue;
+    public LineRenderer linerendererYellow;
+    public LineRenderer linerendererAll;
     private void Start()
     {
         switch (stockColor)
@@ -48,31 +52,34 @@ public class Stock : MonoBehaviour
 
                 if (Physics.Raycast(ray, out hit) && hit.transform == transform)
                 {
-                    miniGameManager.mouseSelectedColor = stockColor;
-                    Debug.Log(miniGameManager.mouseSelectedColor);
-                    Debug.Log(this.gameObject.name);
+
+                switch (stockColor )
+                {
+                    case objectColor.blue:
+                        CheckStockage(miniGameManager.numberBlue, 1, linerendererBlue, stockColor);
+                        break;
+                    case objectColor.red:
+                        CheckStockage(miniGameManager.numberRed, 0, linerendererRed,stockColor);
+                        break;
+                    case objectColor.yellow:
+                        CheckStockage(miniGameManager.numberYellow, 2, linerendererYellow, stockColor);
+                        break;
+                }
+
                 }
             }
         }
 
-        //void SelectIngredient()
-        //{
-        //    Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-        //    RaycastHit hit;
-        //    if (Physics.Raycast(ray, out hit))
-        //    {
-        //        foreach (GameObject prefab in ingredientPrefabs)
-        //        {
-        //            if (hit.collider.gameObject == prefab)
-        //            {
-        //                selectedIngredient = Instantiate(prefab, hit.point, Quaternion.identity);
-        //                break;
-        //            }
-        //        }
-        //    }
-        //}
-
     }
-
+    private void CheckStockage(int minigameStock, int prefabIndex, LineRenderer linerenderer, objectColor _Color)
+    {
+        if (minigameStock > 0)
+        {
+            miniGameManager.SubstractStock(_Color);
+            GameObject containerRef = Instantiate(ingredientPrefabs[prefabIndex]);
+            containerRef.GetComponent<Containers>().lineRenderer = linerenderer;
+            containerRef.GetComponent<Containers>().lineRendererAll = linerendererAll;
+        }
+    }
 }
 

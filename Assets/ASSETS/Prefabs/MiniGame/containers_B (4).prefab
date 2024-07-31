@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 517015069568007066}
   - component: {fileID: 8824742758252069292}
   - component: {fileID: 2975544148068351317}
+  - component: {fileID: 971688424385982372}
   m_Layer: 0
   m_Name: containers_B (4)
   m_TagString: Untagged
@@ -83,3 +84,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &971688424385982372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3564484410152126857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f2f849e65842426db3cc3d972c38241, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lineRenderer: {fileID: 0}
+  selectedColor: 2
+  speed: 1
