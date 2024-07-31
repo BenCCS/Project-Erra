@@ -100,6 +100,8 @@ public class MiniGameManager : MonoBehaviour
 
     public objectColor mouseSelectedColor;
 
+    public Dropship dropship;
+
     private void Start()
     {
         gameHUD.SetActive(false);
@@ -402,32 +404,32 @@ public class MiniGameManager : MonoBehaviour
             case objectColor.red:
                 numberRed += 1;
                 redNumberText.text = numberRed.ToString();
-                command01.GetComponent<Command>().currentRedNumber = numberRed;
-                command02.GetComponent<Command>().currentRedNumber = numberRed;
-                command03.GetComponent<Command>().currentRedNumber = numberRed;
-                command01.GetComponent<Command>().SetAllText();
-                command02.GetComponent<Command>().SetAllText();
-                command03.GetComponent<Command>().SetAllText();
+                // command01.GetComponent<Command>().currentRedNumber = numberRed;
+                // command02.GetComponent<Command>().currentRedNumber = numberRed;
+                // command03.GetComponent<Command>().currentRedNumber = numberRed;
+                // command01.GetComponent<Command>().SetAllText();
+                // command02.GetComponent<Command>().SetAllText();
+                // command03.GetComponent<Command>().SetAllText();
                 break;
             case objectColor.yellow:
                 numberYellow += 1;
                 yellowNumberText.text = numberYellow.ToString();
-                command01.GetComponent<Command>().currentYellowNumber = numberYellow;
-                command02.GetComponent<Command>().currentYellowNumber = numberYellow;
-                command03.GetComponent<Command>().currentYellowNumber = numberYellow;
-                command01.GetComponent<Command>().SetAllText();
-                command02.GetComponent<Command>().SetAllText();
-                command03.GetComponent<Command>().SetAllText();
+                // command01.GetComponent<Command>().currentYellowNumber = numberYellow;
+                // command02.GetComponent<Command>().currentYellowNumber = numberYellow;
+                // command03.GetComponent<Command>().currentYellowNumber = numberYellow;
+                // command01.GetComponent<Command>().SetAllText();
+                // command02.GetComponent<Command>().SetAllText();
+                // command03.GetComponent<Command>().SetAllText();
                 break;
             case objectColor.blue:
                 numberBlue += 1;
                 blueNumberText.text = numberBlue.ToString();
-                command01.GetComponent<Command>().currentBlueNumber = numberBlue;
-                command02.GetComponent<Command>().currentBlueNumber = numberBlue;
-                command03.GetComponent<Command>().currentBlueNumber = numberBlue;
-                command01.GetComponent<Command>().SetAllText();
-                command02.GetComponent<Command>().SetAllText();
-                command03.GetComponent<Command>().SetAllText();
+                // command01.GetComponent<Command>().currentBlueNumber = numberBlue;
+                // command02.GetComponent<Command>().currentBlueNumber = numberBlue;
+                // command03.GetComponent<Command>().currentBlueNumber = numberBlue;
+                // command01.GetComponent<Command>().SetAllText();
+                // command02.GetComponent<Command>().SetAllText();
+                // command03.GetComponent<Command>().SetAllText();
                 break;
         }
     }
@@ -439,76 +441,78 @@ public class MiniGameManager : MonoBehaviour
             case objectColor.red:
                 numberRed -= 1;
                 redNumberText.text = numberRed.ToString();
-                command01.GetComponent<Command>().currentRedNumber = numberRed;
-                command02.GetComponent<Command>().currentRedNumber = numberRed;
-                command03.GetComponent<Command>().currentRedNumber = numberRed;
-                command01.GetComponent<Command>().SetAllText();
-                command02.GetComponent<Command>().SetAllText();
-                command03.GetComponent<Command>().SetAllText();
+                // command01.GetComponent<Command>().currentRedNumber = numberRed;
+                // command02.GetComponent<Command>().currentRedNumber = numberRed;
+                // command03.GetComponent<Command>().currentRedNumber = numberRed;
+                // command01.GetComponent<Command>().SetAllText();
+                // command02.GetComponent<Command>().SetAllText();
+                // command03.GetComponent<Command>().SetAllText();
                 break;
             case objectColor.yellow:
                 numberYellow -= 1;
                 yellowNumberText.text = numberYellow.ToString();
-                command01.GetComponent<Command>().currentYellowNumber = numberYellow;
-                command02.GetComponent<Command>().currentYellowNumber = numberYellow;
-                command03.GetComponent<Command>().currentYellowNumber = numberYellow;
-                command01.GetComponent<Command>().SetAllText();
-                command02.GetComponent<Command>().SetAllText();
-                command03.GetComponent<Command>().SetAllText();
+                // command01.GetComponent<Command>().currentYellowNumber = numberYellow;
+                // command02.GetComponent<Command>().currentYellowNumber = numberYellow;
+                // command03.GetComponent<Command>().currentYellowNumber = numberYellow;
+                // command01.GetComponent<Command>().SetAllText();
+                // command02.GetComponent<Command>().SetAllText();
+                // command03.GetComponent<Command>().SetAllText();
                 break;
             case objectColor.blue:
                 numberBlue -= 1;
                 blueNumberText.text = numberBlue.ToString();
-                command01.GetComponent<Command>().currentBlueNumber = numberBlue;
-                command02.GetComponent<Command>().currentBlueNumber = numberBlue;
-                command03.GetComponent<Command>().currentBlueNumber = numberBlue;
-                command01.GetComponent<Command>().SetAllText();
-                command02.GetComponent<Command>().SetAllText();
-                command03.GetComponent<Command>().SetAllText();
+                // command01.GetComponent<Command>().currentBlueNumber = numberBlue;
+                // command02.GetComponent<Command>().currentBlueNumber = numberBlue;
+                // command03.GetComponent<Command>().currentBlueNumber = numberBlue;
+                // command01.GetComponent<Command>().SetAllText();
+                // command02.GetComponent<Command>().SetAllText();
+                // command03.GetComponent<Command>().SetAllText();
                 break;
         }
     }
 
-    public void SellCommand(GameObject _Command)
+    public void SellCommand()
     {
 
-        if (_Command.GetComponent<Command>().CheckCommand())
-        {
+        //if (_Command.GetComponent<Command>().CheckCommand())
+       // {
 
             int moneyToAdd = Random.Range(5, 16);
 
-            numberRed -= _Command.GetComponent<Command>().redNumberNeeded;
-            if (numberRed < 0)
-            {
-                numberRed = 0;
-            }
-            numberYellow -= _Command.GetComponent<Command>().yellowNumberNeeded;
-            if (numberYellow < 0)
-            {
-                numberYellow = 0;
-            }
-            numberBlue -= _Command.GetComponent<Command>().blueNumberNeeded;
-            if (numberBlue < 0)
-            {
-                numberBlue = 0;
-            }
+            // numberRed -= _Command.GetComponent<Command>().redNumberNeeded;
+            // if (numberRed < 0)
+            // {
+            //     numberRed = 0;
+            // }
+            // numberYellow -= _Command.GetComponent<Command>().yellowNumberNeeded;
+            // if (numberYellow < 0)
+            // {
+            //     numberYellow = 0;
+            // }
+            // numberBlue -= _Command.GetComponent<Command>().blueNumberNeeded;
+            // if (numberBlue < 0)
+            // {
+            //     numberBlue = 0;
+            // }
 
-            blueNumberText.text = numberBlue.ToString();
-            yellowNumberText.text = numberYellow.ToString();
-            redNumberText.text = numberRed.ToString();
+            // blueNumberText.text = numberBlue.ToString();
+            // yellowNumberText.text = numberYellow.ToString();
+            // redNumberText.text = numberRed.ToString();
 
-            _Command.GetComponent<Command>().SetCommand();
-            _Command.GetComponent<Command>().currentRedNumber = numberRed;
-            _Command.GetComponent<Command>().currentBlueNumber = numberBlue;
-            _Command.GetComponent<Command>().currentYellowNumber = numberYellow;
-            _Command.GetComponent<Command>().SetAllText();
+            // _Command.GetComponent<Command>().SetCommand();
+            // // _Command.GetComponent<Command>().currentRedNumber = numberRed;
+            // // _Command.GetComponent<Command>().currentBlueNumber = numberBlue;
+            // // _Command.GetComponent<Command>().currentYellowNumber = numberYellow;
+            // _Command.GetComponent<Command>().SetAllText();
 
-            SetAllCommandText();
+            // SetAllCommandText();
+
+            dropship.Fly();
 
             playerScore += moneyToAdd;
             StartCoroutine(ShowMoneyEarnedText(1f, moneyToAdd));
             scoreText.text = new string("Money: " + playerScore + "$");
-        }
+        //}
 
     }
 
@@ -613,6 +617,25 @@ public class MiniGameManager : MonoBehaviour
             numberOfCommands = MaxCommands - temp4;
 
             Debug.Log(temp2);
+        }
+    }
+
+    public void AddToShip(objectColor _colorToAdd)
+    {
+       switch (_colorToAdd)
+        {
+            case objectColor.red:
+                command01.GetComponent<Command>().currentRedNumber += 1;
+                command01.GetComponent<Command>().SetAllText();
+                break;
+            case objectColor.yellow:
+                command01.GetComponent<Command>().currentYellowNumber += 1;
+                command01.GetComponent<Command>().SetAllText();
+                break;
+            case objectColor.blue:
+                command01.GetComponent<Command>().currentBlueNumber += 1;
+                command01.GetComponent<Command>().SetAllText();
+                break;
         }
     }
 }

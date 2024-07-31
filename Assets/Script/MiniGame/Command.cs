@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class Command : MonoBehaviour
 {
+
+    public MiniGameManager miniGameManager;
+
     [Header("Resources")]
     public int currentRedNumber = 0;
     public int redNumberNeeded = 0;
@@ -82,7 +85,9 @@ public class Command : MonoBehaviour
 
         if (currentBlueNumber >= blueNumberNeeded && currentYellowNumber >= yellowNumberNeeded && currentRedNumber >= redNumberNeeded)
         {
-            checkImage.SetActive(true);
+            miniGameManager.SellCommand();
+            SetCommand();
+            SetAllText();
         }
         else
         {

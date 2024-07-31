@@ -79,6 +79,7 @@ public class Stock : MonoBehaviour
             GameObject containerRef = Instantiate(ingredientPrefabs[prefabIndex]);
             containerRef.GetComponent<Containers>().lineRenderer = linerenderer;
             containerRef.GetComponent<Containers>().lineRendererAll = linerendererAll;
+            containerRef.GetComponent<Containers>().miniGameManager = miniGameManager;
         }
     }
 }

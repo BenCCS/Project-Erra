@@ -9,7 +9,9 @@ public class Containers : MonoBehaviour
     public LineRenderer lineRendererAll;
     public objectColor selectedColor;
 
-    public float speed = 1.0f;
+    public MiniGameManager miniGameManager;
+
+    public float speed = 2.0f;
 
     private int currentIndex = 0;
     private float t = 0.0f; 
@@ -52,6 +54,7 @@ public class Containers : MonoBehaviour
                     }
                     else 
                     {
+                        miniGameManager.AddToShip(selectedColor);
                         Destroy(this.gameObject);
                     }
                 }
