@@ -51,38 +51,7 @@ public class SpaceTruck : MonoBehaviour
 
         if (transform.position.x == endX && transform.position.z == endZ || t == 1)
         {
-            //miniGameManager.SetScore(25);
             Destroy(gameObject);
         }
-
-        //if (Input.GetMouseButtonDown(0))
-        //{
-
-        //    {
-        //        RaycastHit hit;
-        //        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-        //        if (Physics.Raycast(ray, out hit) && hit.transform == transform)
-        //        {
-        //            Addpackage(miniGameManager.mouseSelectedColor);
-        //        }
-        //    }
-        //}
     }
-
-    //public void Addpackage(objectColor objectColor)
-    //{
-    //    switch (objectColor)
-    //    {
-    //        case objectColor.red:
-    //            packageRed.SetActive(true); 
-    //            break;
-    //        case objectColor.blue: 
-    //            packageBlue.SetActive(true); 
-    //            break;
-    //        case objectColor.yellow:
-    //            packageyellow.SetActive(true);
-    //            break;
-    //    }
-    //}
 }

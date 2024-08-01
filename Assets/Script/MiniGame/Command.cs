@@ -61,7 +61,9 @@ public class Command : MonoBehaviour
         blueNumberNeeded = Random.Range(3, 6);
         yellowNumberNeeded = Random.Range(3, 6);
 
-        SetAllText();
+        SetText(redText, currentRedNumber, redNumberNeeded);
+        SetText(blueText, currentBlueNumber, blueNumberNeeded);
+        SetText(yellowText, currentYellowNumber, yellowNumberNeeded);
     }
 
     public bool CheckCommand()
@@ -87,7 +89,7 @@ public class Command : MonoBehaviour
         {
             miniGameManager.SellCommand();
             SetCommand();
-            SetAllText();
+
         }
         else
         {

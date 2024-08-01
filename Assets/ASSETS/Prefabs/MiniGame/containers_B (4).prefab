@@ -97,5 +97,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineRenderer: {fileID: 0}
+  lineRendererAll: {fileID: 0}
   selectedColor: 2
-  speed: 1
+  miniGameManager: {fileID: 0}
+  speed: 6
+  destroyVFX: {fileID: 931352995334258111, guid: 9514abd75da2c8f4a8a43aacf04b6646,
+    type: 3}

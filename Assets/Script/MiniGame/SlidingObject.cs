@@ -14,7 +14,6 @@ public class SlidingObject : MonoBehaviour
     private Vector3 lastMousePosition;
 
     public StockageArea stockAreaRef;
-
     
     public float sensitivity = 0.1f;
     public float friction = 0.98f;
@@ -93,7 +92,6 @@ public class SlidingObject : MonoBehaviour
             {
 
             }
-            //Instantiate(unSucessVFX, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
 
@@ -131,10 +129,6 @@ public class SlidingObject : MonoBehaviour
         {
             stockAreaRef = other.GetComponent<StockageArea>();
         }
-        else
-        {
-            
-        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -159,14 +153,12 @@ public class SlidingObject : MonoBehaviour
             }
             else
             {
-                _miniGameManager.AddError();
                 Instantiate(unSucessVFX, transform.position, Quaternion.identity);
                 Destroy(gameObject);
             }
         }
         else
         {
-            _miniGameManager.AddError();
             Instantiate(unSucessVFX, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }

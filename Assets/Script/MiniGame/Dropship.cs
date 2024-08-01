@@ -39,8 +39,7 @@ public class Dropship : MonoBehaviour
     public void Fly()
     {
         StartCoroutine(Move(landingPosition.position,endPoistion.position,3f));
-        StartCoroutine(Delay(1f));
-        Land();
+        StartCoroutine(Delay(3.1f));
     }
 
     public void Land()
@@ -65,5 +64,6 @@ public class Dropship : MonoBehaviour
     IEnumerator Delay(float time)
     {
         yield return new WaitForSeconds(time);
+        Land();
     }
 }

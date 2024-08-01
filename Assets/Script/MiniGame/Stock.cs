@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Stock : MonoBehaviour
 {
-
     public objectColor stockColor;
     private int colorIndex = 0;
     public GameObject[] ingredientPrefabs;
@@ -52,20 +51,18 @@ public class Stock : MonoBehaviour
 
                 if (Physics.Raycast(ray, out hit) && hit.transform == transform)
                 {
-
-                switch (stockColor )
-                {
-                    case objectColor.blue:
-                        CheckStockage(miniGameManager.numberBlue, 1, linerendererBlue, stockColor);
-                        break;
-                    case objectColor.red:
-                        CheckStockage(miniGameManager.numberRed, 0, linerendererRed,stockColor);
-                        break;
-                    case objectColor.yellow:
-                        CheckStockage(miniGameManager.numberYellow, 2, linerendererYellow, stockColor);
-                        break;
-                }
-
+                    switch (stockColor )
+                    {
+                        case objectColor.blue:
+                            CheckStockage(miniGameManager.numberBlue, 1, linerendererBlue, stockColor);
+                            break;
+                        case objectColor.red:
+                            CheckStockage(miniGameManager.numberRed, 0, linerendererRed,stockColor);
+                            break;
+                        case objectColor.yellow:
+                            CheckStockage(miniGameManager.numberYellow, 2, linerendererYellow, stockColor);
+                            break;
+                    }
                 }
             }
         }

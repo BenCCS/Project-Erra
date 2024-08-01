@@ -11,13 +11,15 @@ public class Containers : MonoBehaviour
 
     public MiniGameManager miniGameManager;
 
-    public float speed = 2.0f;
+    public float speed = 6.0f;
 
     private int currentIndex = 0;
     private float t = 0.0f; 
 
     private bool canMove = true;
     private bool endMove = false;
+
+    public GameObject destroyVFX;
 
     void Start()
     {
@@ -55,6 +57,7 @@ public class Containers : MonoBehaviour
                     else 
                     {
                         miniGameManager.AddToShip(selectedColor);
+                        Instantiate(destroyVFX, transform.position, Quaternion.identity);
                         Destroy(this.gameObject);
                     }
                 }

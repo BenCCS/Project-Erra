@@ -39,11 +39,6 @@ public class LandingPad : MonoBehaviour
                     UIisHide = true;
                     arrivageUI.SetActive(true);
                 }
-                //else
-                //{
-                //    UIisHide = false;
-                //    arrivageUI.SetActive(false);
-                //}
             }
             else
             {

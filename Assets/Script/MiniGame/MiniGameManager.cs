@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Drawing;
 using UnityEngine;
 using UnityEngine.UI;
-//using UnityEngine.UIElements;
 using Color = UnityEngine.Color;
 
 public class MiniGameManager : MonoBehaviour
@@ -29,7 +28,6 @@ public class MiniGameManager : MonoBehaviour
     [Header("UI")]
 
     public GameObject gameHUD;
-
     public GameObject startMenu;
     public GameObject endMenu;
 
@@ -76,30 +74,8 @@ public class MiniGameManager : MonoBehaviour
 
     private float originalTimeScale;
 
-    // Phase 2
-    [Header("Phase")]
-    public bool isInPhase2 = false;
-    public Transform phase1CameraTransform;
-    
-
+    [Header("Objects")]
     public LandingPad landingPad;
-
-    // New gameplay
-    public int spawnNumber = 5;
-    public int spawnCount = 0;
-    public int error = 0;
-    public Text errorText;
-
-    public int MaxCommands = 10;
-    public int numberOfCommands = 10;
-    public int currentNumberOfCommands = 0;
-
-    public GameObject truckObject;
-    public Transform truckSpawnPoint;
-    public bool canSpawnTrucks = false;
-
-    public objectColor mouseSelectedColor;
-
     public Dropship dropship;
 
     private void Start()
@@ -109,7 +85,6 @@ public class MiniGameManager : MonoBehaviour
         endMenu.SetActive(false);
         moneyEarnedText.SetActive(false);
 
-       // Camera.main.transform.position = phase1CameraTransform.position;
 
         originalTimeScale = Time.timeScale;
 
@@ -125,12 +100,6 @@ public class MiniGameManager : MonoBehaviour
         nextSpawn = Time.time + spawnInterval;
 
         cameraMovement.canMove = canControlTheCam;
-
-        // spawnNumber = Random.Range(5, 16);
-        // spawnCount = 0;
-
-
-        // Debug.Log(spawnNumber);
     }
 
     public void Update()
@@ -141,14 +110,6 @@ public class MiniGameManager : MonoBehaviour
 
             spawnSlidingObject();
         }
-
-        if (Time.time >= nextSpawn &&  canSpawnTrucks)
-        {
-            nextSpawn = Time.time + spawnInterval;
-
-            SpawnSpaceTruck();
-        }
-
 
         if (Input.GetKeyDown(KeyCode.Space) && isInSlowMotion == false)
         {
@@ -189,12 +150,7 @@ public class MiniGameManager : MonoBehaviour
         {
             AddStock(objectColor.yellow);
         }
-
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            NextPhase();
-        }
-    }
+   }
 
     public void spawnSlidingObject()
     {
@@ -223,31 +179,11 @@ public class MiniGameManager : MonoBehaviour
         slidingObjectRef.GetComponent<SlidingObject>().SetObjectColor(randomColor);
         slidingObjectRef.GetComponent<SlidingObject>()._miniGameManager = this;
 
-        if (slowmotionIsActivate == false)
-        {
-            
-        }
-        else
+        if (slowmotionIsActivate == true)
         {
             slidingObjectRef.GetComponent<SlidingObject>().SetSpeed(true);
         }
-
-        //spawnCount += 1;
-
-        //if (spawnNumber <= spawnCount)
-        //{
-        //    NextPhase();
-        //}
-
     }
-
-    public void SpawnSpaceTruck()
-    {
-        GameObject truckObjectRef = Instantiate(truckObject, truckSpawnPoint);
-        truckObjectRef.GetComponent<SpaceTruck>().miniGameManager = this;
-    }
-
-
 
     T GetRandomEnum<T>()
     {
@@ -268,8 +204,6 @@ public class MiniGameManager : MonoBehaviour
 
     public void StartMiniGame()
     {
-        //spawnSlidingObject();
-
         canSpawn = true;
 
         playerScore = 0;
@@ -283,7 +217,7 @@ public class MiniGameManager : MonoBehaviour
 
     public void GameOver()
     {
-        canSpawn= false;
+        canSpawn = false;
         gameHUD.SetActive(false);
         endMenu.SetActive(true);
     }
@@ -316,7 +250,6 @@ public class MiniGameManager : MonoBehaviour
                 multiply3.GetComponent<Image>().color = Color.gray;
                 break;
         }
-
     }
 
     public void SelectArrivageType(int selectedColorIndex)
@@ -404,32 +337,14 @@ public class MiniGameManager : MonoBehaviour
             case objectColor.red:
                 numberRed += 1;
                 redNumberText.text = numberRed.ToString();
-                // command01.GetComponent<Command>().currentRedNumber = numberRed;
-                // command02.GetComponent<Command>().currentRedNumber = numberRed;
-                // command03.GetComponent<Command>().currentRedNumber = numberRed;
-                // command01.GetComponent<Command>().SetAllText();
-                // command02.GetComponent<Command>().SetAllText();
-                // command03.GetComponent<Command>().SetAllText();
                 break;
             case objectColor.yellow:
                 numberYellow += 1;
                 yellowNumberText.text = numberYellow.ToString();
-                // command01.GetComponent<Command>().currentYellowNumber = numberYellow;
-                // command02.GetComponent<Command>().currentYellowNumber = numberYellow;
-                // command03.GetComponent<Command>().currentYellowNumber = numberYellow;
-                // command01.GetComponent<Command>().SetAllText();
-                // command02.GetComponent<Command>().SetAllText();
-                // command03.GetComponent<Command>().SetAllText();
                 break;
             case objectColor.blue:
                 numberBlue += 1;
                 blueNumberText.text = numberBlue.ToString();
-                // command01.GetComponent<Command>().currentBlueNumber = numberBlue;
-                // command02.GetComponent<Command>().currentBlueNumber = numberBlue;
-                // command03.GetComponent<Command>().currentBlueNumber = numberBlue;
-                // command01.GetComponent<Command>().SetAllText();
-                // command02.GetComponent<Command>().SetAllText();
-                // command03.GetComponent<Command>().SetAllText();
                 break;
         }
     }
@@ -440,95 +355,51 @@ public class MiniGameManager : MonoBehaviour
         {
             case objectColor.red:
                 numberRed -= 1;
+                if (numberRed < 0)
+                {
+                    numberRed = 0;
+                }
                 redNumberText.text = numberRed.ToString();
-                // command01.GetComponent<Command>().currentRedNumber = numberRed;
-                // command02.GetComponent<Command>().currentRedNumber = numberRed;
-                // command03.GetComponent<Command>().currentRedNumber = numberRed;
-                // command01.GetComponent<Command>().SetAllText();
-                // command02.GetComponent<Command>().SetAllText();
-                // command03.GetComponent<Command>().SetAllText();
                 break;
             case objectColor.yellow:
                 numberYellow -= 1;
+                if (numberYellow < 0)
+                {
+                    numberYellow = 0;
+                }
                 yellowNumberText.text = numberYellow.ToString();
-                // command01.GetComponent<Command>().currentYellowNumber = numberYellow;
-                // command02.GetComponent<Command>().currentYellowNumber = numberYellow;
-                // command03.GetComponent<Command>().currentYellowNumber = numberYellow;
-                // command01.GetComponent<Command>().SetAllText();
-                // command02.GetComponent<Command>().SetAllText();
-                // command03.GetComponent<Command>().SetAllText();
                 break;
             case objectColor.blue:
                 numberBlue -= 1;
+                if (numberBlue < 0)
+                {
+                    numberBlue = 0;
+                }
                 blueNumberText.text = numberBlue.ToString();
-                // command01.GetComponent<Command>().currentBlueNumber = numberBlue;
-                // command02.GetComponent<Command>().currentBlueNumber = numberBlue;
-                // command03.GetComponent<Command>().currentBlueNumber = numberBlue;
-                // command01.GetComponent<Command>().SetAllText();
-                // command02.GetComponent<Command>().SetAllText();
-                // command03.GetComponent<Command>().SetAllText();
                 break;
         }
     }
 
     public void SellCommand()
     {
+        int moneyToAdd = Random.Range(5, 16);
 
-        //if (_Command.GetComponent<Command>().CheckCommand())
-       // {
+        dropship.Fly();
 
-            int moneyToAdd = Random.Range(5, 16);
-
-            // numberRed -= _Command.GetComponent<Command>().redNumberNeeded;
-            // if (numberRed < 0)
-            // {
-            //     numberRed = 0;
-            // }
-            // numberYellow -= _Command.GetComponent<Command>().yellowNumberNeeded;
-            // if (numberYellow < 0)
-            // {
-            //     numberYellow = 0;
-            // }
-            // numberBlue -= _Command.GetComponent<Command>().blueNumberNeeded;
-            // if (numberBlue < 0)
-            // {
-            //     numberBlue = 0;
-            // }
-
-            // blueNumberText.text = numberBlue.ToString();
-            // yellowNumberText.text = numberYellow.ToString();
-            // redNumberText.text = numberRed.ToString();
-
-            // _Command.GetComponent<Command>().SetCommand();
-            // // _Command.GetComponent<Command>().currentRedNumber = numberRed;
-            // // _Command.GetComponent<Command>().currentBlueNumber = numberBlue;
-            // // _Command.GetComponent<Command>().currentYellowNumber = numberYellow;
-            // _Command.GetComponent<Command>().SetAllText();
-
-            // SetAllCommandText();
-
-            dropship.Fly();
-
-            playerScore += moneyToAdd;
-            StartCoroutine(ShowMoneyEarnedText(1f, moneyToAdd));
-            scoreText.text = new string("Money: " + playerScore + "$");
-        //}
-
+        playerScore += moneyToAdd;
+        StartCoroutine(ShowMoneyEarnedText(1f, moneyToAdd));
+        scoreText.text = new string("Money: " + playerScore + "$");
     }
 
     private IEnumerator SetSlowmotion(float _slowValue, float seconds) 
     {
-
         isInSlowMotion = true;
-
         Time.timeScale = 0.5f;
 
         yield return new WaitForSeconds(seconds);
 
         Time.timeScale = originalTimeScale;
-
         isInSlowMotion = false;
-
     }
 
     private void SetAllCommandText()
@@ -558,66 +429,6 @@ public class MiniGameManager : MonoBehaviour
         yield return new WaitForSeconds(duration);
 
         moneyEarnedText.SetActive(false);
-    }
-
-
-
-    public void NextPhase()
-    {
-        if(isInPhase2 == false)
-        {
-            scoreText.gameObject.SetActive(true);
-            errorText.gameObject.SetActive(false);
-
-            spawnInterval = 10;
-            isInPhase2 = true;
-            canSpawn = false;
-            canSpawnTrucks = true;
-            CalculateNumberOfCommands();
-            
-            if (landingPad.UIisHide == true)
-            {
-                landingPad.HideUI();
-            }
-        }
-        else
-        {
-            isInPhase2 = false;
-            canSpawn = true;
-            Camera.main.transform.position = phase1CameraTransform.position;
-        }
-    }
-
-    public void AddError()
-    {
-        error += 1;
-        errorText.text = "Errors : " + error;
-    }
-
-    public void CalculateNumberOfCommands()
-    {
-       
-        if (error == spawnCount)
-        {
-            GameOver();
-        }
-        else if(error == 0) 
-        {
-            numberOfCommands = MaxCommands;
-        }
-        else
-        {
-
-            int temp = error * 100;
-            int temp2 = temp / spawnNumber;
-
-            int temp3 = temp * MaxCommands;
-            int temp4 = temp3 / 100;
-
-            numberOfCommands = MaxCommands - temp4;
-
-            Debug.Log(temp2);
-        }
     }
 
     public void AddToShip(objectColor _colorToAdd)
