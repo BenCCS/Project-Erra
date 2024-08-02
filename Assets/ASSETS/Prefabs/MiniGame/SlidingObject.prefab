@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5357357444246714968
+--- !u!1 &2949826452396163668
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,50 +8,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8935829881573886027}
-  - component: {fileID: 97240061007327869}
-  - component: {fileID: 5937431211814981252}
-  - component: {fileID: 4141276600359576404}
-  - component: {fileID: 4141276600359576403}
-  - component: {fileID: 8390020462624703417}
+  - component: {fileID: 8872573536832543443}
+  - component: {fileID: 2723407573677774669}
+  - component: {fileID: 4165765238081104193}
   m_Layer: 0
-  m_Name: SlidingObject
+  m_Name: Container
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8935829881573886027
+--- !u!4 &8872573536832543443
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5357357444246714968}
+  m_GameObject: {fileID: 2949826452396163668}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 5773037228868109943}
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_Children: []
+  m_Father: {fileID: 8935829881573886027}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &97240061007327869
+--- !u!33 &2723407573677774669
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5357357444246714968}
+  m_GameObject: {fileID: 2949826452396163668}
   m_Mesh: {fileID: 1142963568968560471, guid: fde3699d58771614aab1746fd1a1051f, type: 3}
---- !u!23 &5937431211814981252
+--- !u!23 &4165765238081104193
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5357357444246714968}
+  m_GameObject: {fileID: 2949826452396163668}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -87,6 +83,42 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &5357357444246714968
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8935829881573886027}
+  - component: {fileID: 4141276600359576404}
+  - component: {fileID: 4141276600359576403}
+  - component: {fileID: 8390020462624703417}
+  m_Layer: 0
+  m_Name: SlidingObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8935829881573886027
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5357357444246714968}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5773037228868109943}
+  - {fileID: 8872573536832543443}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4141276600359576404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,7 +137,7 @@ MonoBehaviour:
   - {fileID: 4525208924630075410, guid: d8766e21bbf5ed74da7f2d6bfb06872d, type: 3}
   - {fileID: -7631604088959949910, guid: 60c174206ae544646834e01ba7e61360, type: 3}
   - {fileID: 1168186337584548019, guid: f6e3e605937d62d498c57dce7e318256, type: 3}
-  _meshFilter: {fileID: 97240061007327869}
+  _meshFilter: {fileID: 0}
   _trailRenderer: {fileID: 3928430443369293346}
   stockAreaRef: {fileID: 0}
   sensitivity: 0.2
@@ -121,6 +153,7 @@ MonoBehaviour:
   startX: -5.73
   endX: 8.19
   duration: 5
+  slowDuration: 10
 --- !u!65 &4141276600359576403
 BoxCollider:
   m_ObjectHideFlags: 0
